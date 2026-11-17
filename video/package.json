@@ -1,0 +1,23 @@
+{
+  "name": "gemini-discovery-film",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio",
+    "timeline": "node scripts/build-timeline.mjs",
+    "render": "remotion render Film out/film.mp4 --concurrency=12"
+  },
+  "dependencies": {
+    "@fontsource-variable/heebo": "5.3.0",
+    "@fontsource/frank-ruhl-libre": "5.3.0",
+    "@remotion/cli": "4.0.544",
+    "@remotion/fonts": "4.0.544",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.544"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "typescript": "~6.0.3"
+  }
+}

@@ -13,17 +13,6 @@ for (const route of ROUTES) {
   });
 }
 
-test('axe on the dark color scheme (home and a demo)', async ({ page }) => {
-  await page.emulateMedia({ colorScheme: 'dark' });
-  for (const route of ['/', '/demo/demo-compare-procedures', '/scenario/bullets-to-draft']) {
-    await go(page, route);
-    const results = await new AxeBuilder({ page }).withTags(['wcag2aa']).analyze();
-    expect(
-      results.violations.filter((v) => v.impact === 'serious' || v.impact === 'critical').map((v) => v.id),
-    ).toEqual([]);
-  }
-});
-
 test('html is Hebrew RTL with noindex', async ({ page }) => {
   await go(page, '/');
   await expect(page.locator('html')).toHaveAttribute('lang', 'he');

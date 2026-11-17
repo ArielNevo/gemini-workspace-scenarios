@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { ErrorBoundary } from '../components/ErrorBoundary';
-import { Sparkle } from '../components/Illustrations';
+import { Logo } from '../components/Logo';
 import { OrgDataNotice } from '../components/OrgDataNotice';
 import { siteConfig } from '../lib/content';
 import { useAppState } from './state';
@@ -18,17 +18,13 @@ export function Layout() {
       <OrgDataNotice variant="banner" />
       <header className="site-header">
         <div className="container header-inner">
-          <NavLink to="/" className="brand">
-            {siteConfig.logoPath ? (
-              <img src={siteConfig.logoPath} alt="" className="brand-logo" />
-            ) : (
-              <span className="brand-mark" aria-hidden="true">
-                <Sparkle />
+          <NavLink to="/" className="brand" aria-label="דף הבית: גלו את Gemini">
+            {siteConfig.logoPath ? <img src={siteConfig.logoPath} alt="" className="brand-logo" /> : <Logo />}
+            <span className="brand-text">
+              <span className="brand-name">
+                גלו את <bdi>Gemini</bdi>
               </span>
-            )}
-            <span>
-              גלו את <bdi>Gemini</bdi>
-              {siteConfig.orgDisplayName && <span className="muted"> · {siteConfig.orgDisplayName}</span>}
+              {siteConfig.orgDisplayName && <span className="brand-sub">{siteConfig.orgDisplayName}</span>}
             </span>
           </NavLink>
           <nav aria-label="ניווט ראשי">

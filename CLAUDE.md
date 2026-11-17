@@ -10,7 +10,7 @@ Static Hebrew (RTL) site that helps employees without a license discover where G
 4. **Zero cost, zero third parties at runtime.** No fonts/CDN/analytics/cookies. `localStorage` only on explicit "save". CSP `connect-src 'self'` when the AI flag is off.
 5. **Content integrity.** No savings promises, no match percentages, no claims on Google data protection/residency/privacy, no claims of availability in the org. Distinguish: exists at Google (source + date) / included in package (`unknown` until a human sets it) / verified in org (`false` until a human sets it). New scenarios are `status: "draft"`.
 6. **Core works without any model.** The AI module (`src/features/ai-assist`) is off (`VITE_ENABLE_AI_ASSIST=false`) and, when off, is not even built (checked by `npm run check:bundle`).
-7. **Hebrew RTL + WCAG 2.2 AA.** Logical CSS properties only; wrap Latin product names in `<bdi>`; keyboard access, visible focus, `aria-live` for results, 360px width.
+7. **House style, light only** (ROI Simulator / My PR Studio tokens in `src/styles/global.css`). **Hebrew RTL + WCAG 2.2 AA.** Logical CSS properties only; wrap Latin product names in `<bdi>`; keyboard access, visible focus, `aria-live` for results, 360px width.
 8. **Verify facts** about Google/Firebase/GitHub in official docs before putting them in code or content; otherwise leave `TODO(verify)`.
 
 User-facing text is Hebrew; code, file names and technical comments are English.
@@ -31,7 +31,8 @@ npm run content:lint      # emails/phones/9-digit/URL allow-list (+ CONTENT_FORB
 
 - `config/site.config.json` — site settings, access-request form, CDO consult, recommender weights
 - `content/units.json` + `content/work-topics.json` — quick path: unit → topic → curated scenarios (+ prefill for the detailed questionnaire)
-- `public/media/` — walkthrough video recorded from the site itself (`scripts/record-demo.ts`)
+- `public/media/` — hero image, AI avatar (stacked alpha), film, walkthrough recording
+- `video/` — Remotion film, narration and avatar sources (see `video/README.md`); not part of the site build
 - `content/` — `taxonomy.json`, `copy.he.json`, `synonyms.json`, `allowed-domains.json`, `scenarios/*.json`, `demos/*.json`
 - `src/lib/content/schema.ts` — Zod schemas (source of truth for content shape)
 - `src/lib/{hebrew,search,recommend,storage}` — normalization, MiniSearch, rule engine, opt-in storage
