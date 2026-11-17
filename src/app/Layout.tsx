@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { ErrorBoundary } from '../components/ErrorBoundary';
+import { Sparkle } from '../components/Illustrations';
 import { OrgDataNotice } from '../components/OrgDataNotice';
 import { siteConfig } from '../lib/content';
 import { useAppState } from './state';
@@ -18,7 +19,13 @@ export function Layout() {
       <header className="site-header">
         <div className="container header-inner">
           <NavLink to="/" className="brand">
-            {siteConfig.logoPath && <img src={siteConfig.logoPath} alt="" className="brand-logo" />}
+            {siteConfig.logoPath ? (
+              <img src={siteConfig.logoPath} alt="" className="brand-logo" />
+            ) : (
+              <span className="brand-mark" aria-hidden="true">
+                <Sparkle />
+              </span>
+            )}
             <span>
               גלו את <bdi>Gemini</bdi>
               {siteConfig.orgDisplayName && <span className="muted"> · {siteConfig.orgDisplayName}</span>}
@@ -55,6 +62,11 @@ export function Layout() {
       <footer className="site-footer">
         <div className="container">
           <OrgDataNotice variant="footer" />
+          {siteConfig.consult.name && (
+            <p className="small">
+              להתייעצות: {siteConfig.consult.name}, {siteConfig.consult.role}.
+            </p>
+          )}
           {state.saved && (
             <p>
               שמרתם את המסלול בדפדפן הזה.{' '}

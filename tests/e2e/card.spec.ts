@@ -13,12 +13,15 @@ async function reachCard(page: import('@playwright/test').Page) {
   await page.getByRole('link', { name: 'לכרטיס השימושים שלי' }).click();
 }
 
-test('card shows caution for internal material and the "coming soon" request path (mode none)', async ({
+test('card shows caution and a CDO consult for internal material, and the form request path', async ({
   page,
 }) => {
   await reachCard(page);
   await expect(page.getByText('בחומר כזה, פעלו לפי הנחיות הארגון. בינתיים התנסו בחומר מדומה.')).toBeVisible();
-  await expect(page.getByText('הדרך לבקשת רישיון תתפרסם בקרוב')).toBeVisible();
+  await expect(page.locator('.consult')).toContainText('סימנתם שאתם עובדים עם חומר פנימי או מוגן');
+  await page.getByRole('button', { name: 'אני רוצה להתנסות' }).click();
+  await expect(page.getByTestId('request-payload')).toContainText('השימושים שבחרתי:');
+  await expect(page.getByTestId('request-confirm')).toHaveAttribute('target', '_blank');
 });
 
 test('print stylesheet hides navigation and banners but keeps the after-license note', async ({ page }) => {

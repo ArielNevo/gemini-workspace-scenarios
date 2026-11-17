@@ -7,6 +7,7 @@ export interface SavedState {
   version: 1;
   savedOn: string;
   input: DiscoveryInput;
+  quick?: { unitId?: string; topicId?: string };
   chosen: string[];
   feedback: Record<string, FeedbackValue>;
 }

@@ -4,7 +4,7 @@ Static Hebrew (RTL) site that helps employees without a license discover where G
 
 ## Iron rules (never break)
 
-1. **No organizational data, anywhere.** The repo and site are public. No org-internal info, employee names, internal systems or addresses, real documents, real bodies or laws in demos, secrets. Say "הארגון"; the org name appears only if `config/site.config.json` → `orgDisplayName` is set.
+1. **No organizational data, anywhere.** The repo and site are public. No org-internal info, employee names, internal systems or addresses, real documents, real bodies or laws in demos, secrets. By the owner's decision (2026-11-17) the site shows: the org name (`orgDisplayName`), public **unit names** and generic work topics (`content/units.json`, `content/work-topics.json`), and the CDO's name and role (`config/site.config.json` → `consult`). Never add unit figures, caseloads, plans, staffing, reorganizations or any other detail about a unit.
 2. **The org-data notice is everywhere.** Use only `<OrgDataNotice variant="banner|inline|full|footer" />`. Every route renders inside `Layout` (banner + footer). Journey and results also show `notice.inline`. e2e fails if a route lacks them. Texts live in `content/copy.he.json`.
 3. **No free-text input** except the catalog search, which never leaves component state (no URL, storage or request).
 4. **Zero cost, zero third parties at runtime.** No fonts/CDN/analytics/cookies. `localStorage` only on explicit "save". CSP `connect-src 'self'` when the AI flag is off.
@@ -29,7 +29,9 @@ npm run content:lint      # emails/phones/9-digit/URL allow-list (+ CONTENT_FORB
 
 ## Layout
 
-- `config/site.config.json` — site settings, access-request mode, recommender weights
+- `config/site.config.json` — site settings, access-request form, CDO consult, recommender weights
+- `content/units.json` + `content/work-topics.json` — quick path: unit → topic → curated scenarios (+ prefill for the detailed questionnaire)
+- `public/media/` — walkthrough video recorded from the site itself (`scripts/record-demo.ts`)
 - `content/` — `taxonomy.json`, `copy.he.json`, `synonyms.json`, `allowed-domains.json`, `scenarios/*.json`, `demos/*.json`
 - `src/lib/content/schema.ts` — Zod schemas (source of truth for content shape)
 - `src/lib/{hebrew,search,recommend,storage}` — normalization, MiniSearch, rule engine, opt-in storage

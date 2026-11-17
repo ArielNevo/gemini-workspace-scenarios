@@ -1,0 +1,49 @@
+{
+  "id": "summarize-public-comments",
+  "family": "compare",
+  "title": "אני צריך לרכז הערות שהתקבלו על טיוטה",
+  "userNeed": "התקבלו הערות רבות על טיוטה, ואני צריך לרכז אותן לפי נושא ולראות מה חוזר ומה שונה.",
+  "tool": "gemini-notebook",
+  "whatYouGet": "טבלה שמקבצת את ההערות לפי נושא: הסעיף בטיוטה, תמצית ההערה ומי העיר אותה, וסיכום קצר של הנושאים העיקריים.",
+  "tags": {
+    "tasks": ["compare", "read-documents"],
+    "difficulties": ["too-much-material", "checking"],
+    "materials": ["several-docs"],
+    "outputs": ["change-table", "summary"],
+    "roles": ["hq-staff", "legal"],
+    "frequency": ["sometimes"]
+  },
+  "priority": 4,
+  "firstExperiment": {
+    "materialSuggestion": "הערות שפורסמו לציבור במסגרת שיתוף ציבור, או כמה הערות מדומות שכתבתם על טיוטה מדומה.",
+    "steps": [
+      "הוסיפו למחברת את הטיוטה ואת ההערות כמקורות, עם שמות ברורים לכל מקור.",
+      "בקשו טבלה שמקבצת את ההערות לפי נושא: סעיף, תמצית ההערה ומקור ההערה.",
+      "ספרו את ההערות במקורות ובטבלה, ובדקו כמה הערות מול הנוסח המקורי שלהן."
+    ],
+    "successCriteria": ["כל ההערות מופיעות בטבלה, כל אחת תחת נושא מתאים.", "כל הערה משויכת למקור הנכון."],
+    "timeBoxMinutes": 30
+  },
+  "whatToVerify": [
+    "שאף הערה לא הושמטה ושאף הערה לא שויכה למעיר אחר.",
+    "שהתמצית לא שינתה את משמעות ההערה ולא ריככה התנגדות.",
+    "ההפניות למקורות מאפשרות לבדוק את התשובה, אבל אינן מבטיחות שהמסקנה נכונה."
+  ],
+  "limitations": [
+    "מקורות שמייבאים מ-Drive מועתקים למחברת. לפני שמוסיפים חומר, פעלו לפי הנחיות הארגון בנוגע למידע מוגן.",
+    "כשיש הערות רבות, הכלי עלול לאחד הערות דומות או לדלג על הערה בודדת. הטבלה אינה מחליפה בדיקה מול ההערות עצמן."
+  ],
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://knowledge.workspace.google.com/admin/generative-ai/notebooklm",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "unknown",
+    "note": "לפי דף Google על Gemini Notebook (נבדק ב-17.11.2026), הכלי תומך ביותר מ-80 שפות, אבל הדף אינו מפרט אותן ולא מצאנו בו אזכור מפורש של עברית. כדאי לבדוק את העבודה בעברית בעת ההתנסות.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

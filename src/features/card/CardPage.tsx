@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { OrgDataNotice } from '../../components/OrgDataNotice';
 import { Page } from '../../components/Page';
 import { ToolName } from '../../components/Badges';
-import { getScenario, siteConfig, t, tagLabel, TOOL_SHORT } from '../../lib/content';
+import { getScenario, getTopic, getUnit, siteConfig, t, tagLabel, TOOL_SHORT } from '../../lib/content';
+import { ConsultCard } from '../../components/ConsultCard';
 import { useAppState } from '../../app/state';
 import { buildAccessRequest, type AccessPayload } from '../../lib/access-request';
 import { clearState, saveState } from '../../lib/storage';
@@ -31,13 +32,23 @@ export default function CardPage() {
   const payload: AccessPayload = useMemo(
     () => ({
       scenarios: chosen.map((s) => ({ id: s.id, title: s.title })),
-      tags: SCORED_CATEGORIES.map((cat) => ({
-        category: CATEGORY_LABEL[cat]!,
-        labels: state.input[cat].map((id) => tagLabel(cat, id)),
-      })),
+      tags: [
+        {
+          category: 'יחידה',
+          labels: [getUnit(state.quick.unitId ?? '')?.name].filter((x): x is string => !!x),
+        },
+        {
+          category: 'נושא עיקרי',
+          labels: [getTopic(state.quick.topicId ?? '')?.label].filter((x): x is string => !!x),
+        },
+        ...SCORED_CATEGORIES.map((cat) => ({
+          category: CATEGORY_LABEL[cat]!,
+          labels: state.input[cat].map((id) => tagLabel(cat, id)),
+        })),
+      ],
       date: new Date().toISOString().slice(0, 10),
     }),
-    [chosen, state.input],
+    [chosen, state.input, state.quick],
   );
   const request = buildAccessRequest(siteConfig.requestAccess, payload);
 
@@ -137,11 +148,34 @@ export default function CardPage() {
         ) : (
           <div className="confirm-box" role="region" aria-labelledby="confirm-h">
             <h3 id="confirm-h">זה מה שיועבר</h3>
-            <p>יישלחו רק: השימושים שבחרת, התגיות שבחרת ותאריך. אין העברה אוטומטית.</p>
+            {request.mode === 'url' ? (
+              <p>
+                הטופס מבקש לתאר כיצד הרישיון יסייע לעבודתכם. העתיקו את התקציר שלמטה והדביקו אותו בטופס. התקציר
+                כולל רק את השימושים והבחירות שסימנתם באתר, ותאריך. שום דבר לא נשלח אוטומטית.
+              </p>
+            ) : (
+              <p>יישלחו רק: השימושים שבחרת, התגיות שבחרת ותאריך. אין העברה אוטומטית.</p>
+            )}
             <pre className="payload" data-testid="request-payload">
               {request.text}
             </pre>
             <div className="cta-row">
+              {request.mode === 'url' && (
+                <button
+                  type="button"
+                  className="button"
+                  onClick={async () => {
+                    try {
+                      await navigator.clipboard.writeText(request.text);
+                      setStatus('התקציר הועתק. אפשר להדביק אותו בטופס.');
+                    } catch {
+                      setStatus('לא ניתן להעתיק אוטומטית. סמנו את התקציר והעתיקו ידנית.');
+                    }
+                  }}
+                >
+                  העתיקו את התקציר
+                </button>
+              )}
               <a
                 className="button button-primary"
                 href={request.href}
@@ -214,6 +248,13 @@ export default function CardPage() {
         </p>
       )}
 
+      <ConsultCard
+        reason={
+          caution
+            ? 'סימנתם שאתם עובדים עם חומר פנימי או מוגן. לפני שמשתמשים בכלי על חומר כזה, כדאי להתייעץ.'
+            : 'בטופס תתבקשו לבחור שירות. לא בטוחים מה מתאים לכם? פנו להתייעצות.'
+        }
+      />
       <TimeCalculator />
 
       <p className="print-only print-footer">{t('notice.afterLicense')}</p>

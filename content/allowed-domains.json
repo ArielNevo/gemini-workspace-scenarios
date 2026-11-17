@@ -1,3 +1,11 @@
 {
-  "domains": ["google.com", "gov.il", "github.com", "firebase.google.com", "googleblog.com", "google.dev"]
+  "domains": [
+    "google.com",
+    "gov.il",
+    "github.com",
+    "firebase.google.com",
+    "googleblog.com",
+    "google.dev",
+    "monday.com"
+  ]
 }

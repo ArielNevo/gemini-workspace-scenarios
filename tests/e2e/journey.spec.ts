@@ -6,7 +6,7 @@ test('full journey: home → questions → results → demo → card, with no ex
 }) => {
   const external = blockExternal(page);
   await go(page, '/');
-  await page.getByRole('link', { name: /בואו נתחיל/ }).click();
+  await page.getByRole('link', { name: /התאמה מדויקת/ }).click();
   await page.getByLabel('קריאת מסמכים ונהלים').check();
   await page.getByLabel('הכנת ישיבות ותדריכים').check();
   await page.getByRole('button', { name: 'המשך' }).click();
@@ -52,7 +52,7 @@ test('catalog search finds scenarios in Hebrew and filters by tool', async ({ pa
   await expect(page.locator('.catalog-grid li').first()).toContainText('מה השתנה בנוהל');
   await page.getByLabel('חיפוש בנושא כללי').fill('');
   await page.getByLabel('כלי').selectOption('gemini-in-workspace-apps');
-  await expect(page.locator('.catalog-grid li')).toHaveCount(1);
+  await expect(page.locator('.catalog-grid li')).toHaveCount(2);
 });
 
 test('every demo renders with provenance and the can/check line', async ({ page }) => {

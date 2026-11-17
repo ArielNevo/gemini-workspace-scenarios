@@ -1,0 +1,232 @@
+{
+  "topics": [
+    {
+      "id": "legal-opinions",
+      "label": "חוות דעת וייעוץ משפטי",
+      "hint": "קריאה של הרבה חומר, השוואת עמדות וניסוח טיוטה ראשונה.",
+      "scenarios": ["brief-from-many-sources", "compare-two-positions", "feedback-on-draft"],
+      "tags": {
+        "tasks": ["read-documents", "write"],
+        "difficulties": ["too-much-material", "wording"],
+        "materials": ["several-docs"],
+        "outputs": ["summary", "draft"]
+      }
+    },
+    {
+      "id": "case-preparation",
+      "label": "הכנת תיקים ודיונים",
+      "hint": "להגיע לדיון מוכן: תמצית, שאלות צפויות ומפת סוגיות.",
+      "scenarios": ["prepare-for-meeting", "map-issues-across-documents", "brief-from-many-sources"],
+      "tags": {
+        "tasks": ["read-documents", "prepare-meetings"],
+        "difficulties": ["too-much-material"],
+        "materials": ["several-docs"],
+        "outputs": ["summary", "qa"]
+      }
+    },
+    {
+      "id": "rulings",
+      "label": "מעקב אחר פסיקה והחלטות",
+      "hint": "להבין במהירות פסק דין או החלטה שפורסמו, ולבדוק מול המקור.",
+      "scenarios": ["summarize-public-ruling", "shorten-long-document", "map-issues-across-documents"],
+      "tags": {
+        "tasks": ["read-documents"],
+        "difficulties": ["too-much-material"],
+        "materials": ["single-doc"],
+        "outputs": ["summary"]
+      }
+    },
+    {
+      "id": "legislation",
+      "label": "ליווי חקיקה, תקנות ונהלים",
+      "hint": "מה השתנה בין גרסאות, האם יש סתירות, ומה ההערות שהתקבלו.",
+      "scenarios": ["what-changed-in-procedure", "check-consistency", "summarize-public-comments"],
+      "tags": {
+        "tasks": ["compare", "read-documents"],
+        "difficulties": ["comparing", "checking"],
+        "materials": ["several-docs"],
+        "outputs": ["change-table"]
+      }
+    },
+    {
+      "id": "complaints",
+      "label": "בירור תלונות ופניות ציבור",
+      "hint": "לנסח מענה ברור ומכבד, ולמצוא את הסעיף הרלוונטי בנוהל.",
+      "scenarios": ["reply-to-public-inquiry", "find-answer-in-procedures", "plain-language-for-public"],
+      "tags": {
+        "tasks": ["write", "read-documents"],
+        "difficulties": ["wording", "finding-info"],
+        "materials": ["single-doc"],
+        "outputs": ["draft", "qa"]
+      }
+    },
+    {
+      "id": "appeals-decisions",
+      "label": "עררים, בקשות והחלטות",
+      "hint": "החלטות שחוזרות על עצמן: תבנית קבועה, רשימת בדיקה ותמצית התיק.",
+      "scenarios": ["decision-template", "requirements-to-checklist", "summarize-public-ruling"],
+      "tags": {
+        "tasks": ["write", "read-documents"],
+        "difficulties": ["starting", "checking"],
+        "materials": ["single-doc"],
+        "outputs": ["draft", "checklist"]
+      }
+    },
+    {
+      "id": "registration",
+      "label": "רישום, רישוי ובדיקת בקשות",
+      "hint": "להפוך דרישות לרשימת בדיקה ולמצוא תשובות בהנחיות.",
+      "scenarios": ["requirements-to-checklist", "find-answer-in-procedures", "faq-for-team"],
+      "tags": {
+        "tasks": ["read-documents"],
+        "difficulties": ["checking", "finding-info"],
+        "materials": ["single-doc"],
+        "outputs": ["checklist", "qa"]
+      }
+    },
+    {
+      "id": "supervision",
+      "label": "פיקוח, אכיפה ובקרה",
+      "hint": "לבדוק עמידה בדרישות ולהשוות בין מסמכים.",
+      "scenarios": ["requirements-to-checklist", "check-consistency", "text-to-table"],
+      "tags": {
+        "tasks": ["compare", "read-documents"],
+        "difficulties": ["checking", "comparing"],
+        "materials": ["several-docs"],
+        "outputs": ["checklist", "change-table"]
+      }
+    },
+    {
+      "id": "public-service",
+      "label": "שירות לציבור והנגשת מידע",
+      "hint": "להסביר מידע מקצועי בשפה פשוטה ולהכין שאלות ותשובות.",
+      "scenarios": ["plain-language-for-public", "faq-for-team", "reply-to-public-inquiry"],
+      "tags": {
+        "tasks": ["write"],
+        "difficulties": ["wording"],
+        "materials": ["single-doc"],
+        "outputs": ["draft", "qa"]
+      }
+    },
+    {
+      "id": "policy-research",
+      "label": "מדיניות, תכנון ומחקר",
+      "hint": "סקירה ראשונית ממקורות פומביים ותמצית לקבלת החלטות.",
+      "scenarios": ["public-sources-overview", "brief-from-many-sources", "outline-for-presentation"],
+      "tags": {
+        "tasks": ["read-documents", "prepare-meetings"],
+        "difficulties": ["starting", "too-much-material"],
+        "materials": ["none-yet", "several-docs"],
+        "outputs": ["summary"]
+      }
+    },
+    {
+      "id": "public-participation",
+      "label": "שיתוף ציבור וריכוז הערות",
+      "hint": "לרכז הערות לפי נושאים ולהחזיר תשובה מסודרת.",
+      "scenarios": ["summarize-public-comments", "text-to-table", "rewrite-for-audience"],
+      "tags": {
+        "tasks": ["compare", "write"],
+        "difficulties": ["too-much-material"],
+        "materials": ["several-docs"],
+        "outputs": ["change-table", "summary"]
+      }
+    },
+    {
+      "id": "data-reports",
+      "label": "נתונים, דוחות ומדדים",
+      "hint": "להבין טבלה, להכין דוח תקופתי ולהפוך טקסט לטבלה.",
+      "scenarios": ["periodic-report-from-data", "understand-a-table", "text-to-table"],
+      "tags": {
+        "tasks": ["work-with-data"],
+        "difficulties": ["finding-info"],
+        "materials": ["table"],
+        "outputs": ["summary"]
+      }
+    },
+    {
+      "id": "budget-finance",
+      "label": "תקציב, כספים ותשלומים",
+      "hint": "לעבוד עם טבלאות, להכין סיכום להנהלה ורשימת בדיקה.",
+      "scenarios": ["understand-a-table", "periodic-report-from-data", "requirements-to-checklist"],
+      "tags": {
+        "tasks": ["work-with-data"],
+        "difficulties": ["checking"],
+        "materials": ["table"],
+        "outputs": ["summary", "checklist"]
+      }
+    },
+    {
+      "id": "hr-training",
+      "label": "גיוס, קליטה והדרכה",
+      "hint": "חבילת קליטה, מערך הדרכה ושאלות לבדיקה עצמית.",
+      "scenarios": ["onboarding-pack", "training-from-procedures", "self-quiz"],
+      "tags": {
+        "tasks": ["learn-teach"],
+        "difficulties": ["starting"],
+        "materials": ["several-docs"],
+        "outputs": ["learning-pack"]
+      }
+    },
+    {
+      "id": "operations-procurement",
+      "label": "רכש, תפעול ונהלים פנימיים",
+      "hint": "למצוא תשובה בנוהל, להבין מה השתנה ולהכין רשימת בדיקה.",
+      "scenarios": ["find-answer-in-procedures", "what-changed-in-procedure", "requirements-to-checklist"],
+      "tags": {
+        "tasks": ["read-documents"],
+        "difficulties": ["finding-info"],
+        "materials": ["single-doc"],
+        "outputs": ["qa", "checklist"]
+      }
+    },
+    {
+      "id": "communications",
+      "label": "דוברות, הסברה ותקשורת",
+      "hint": "לנסח את אותו מסר לקהלים שונים ובשפה פשוטה.",
+      "scenarios": ["rewrite-for-audience", "plain-language-for-public", "bullets-to-draft"],
+      "tags": {
+        "tasks": ["write"],
+        "difficulties": ["wording"],
+        "materials": ["rough-notes", "single-doc"],
+        "outputs": ["draft"]
+      }
+    },
+    {
+      "id": "international",
+      "label": "קשרי חוץ וביקורות בינלאומיות",
+      "hint": "סקירה ממקורות פומביים, מפת דרישות ותדריך לפגישה.",
+      "scenarios": ["public-sources-overview", "requirements-to-checklist", "prepare-for-meeting"],
+      "tags": {
+        "tasks": ["read-documents", "prepare-meetings"],
+        "difficulties": ["too-much-material"],
+        "materials": ["several-docs"],
+        "outputs": ["summary", "checklist"]
+      }
+    },
+    {
+      "id": "management",
+      "label": "ניהול צוות, ישיבות ותוכניות עבודה",
+      "hint": "להכין ישיבה, להוציא משימות מסיכום ולבנות שלד לתוכנית.",
+      "scenarios": ["prepare-for-meeting", "summary-to-action-items", "outline-for-presentation"],
+      "tags": {
+        "tasks": ["prepare-meetings", "write"],
+        "difficulties": ["starting"],
+        "materials": ["rough-notes"],
+        "outputs": ["action-list", "draft"]
+      }
+    },
+    {
+      "id": "new-field",
+      "label": "למידה של תחום חדש",
+      "hint": "מילון מושגים, מפת נושאים ושאלות לבדיקה עצמית.",
+      "scenarios": ["enter-new-field", "glossary-and-map", "listen-to-material"],
+      "tags": {
+        "tasks": ["learn-teach"],
+        "difficulties": ["too-much-material", "starting"],
+        "materials": ["several-docs"],
+        "outputs": ["learning-pack"]
+      }
+    }
+  ]
+}

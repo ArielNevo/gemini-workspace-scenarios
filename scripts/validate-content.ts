@@ -6,7 +6,14 @@
 import { fileURLToPath } from 'node:url';
 import { readFileSync, readdirSync } from 'node:fs';
 import { join, basename } from 'node:path';
-import { DemoSchema, ScenarioSchema, SiteConfigSchema, TaxonomySchema } from '../src/lib/content/schema';
+import {
+  DemoSchema,
+  ScenarioSchema,
+  SiteConfigSchema,
+  TaxonomySchema,
+  UnitsSchema,
+  WorkTopicsSchema,
+} from '../src/lib/content/schema';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const errors: string[] = [];
@@ -90,8 +97,35 @@ for (const d of demos)
   for (const id of d?.relatedScenarios ?? [])
     if (!scenarioIds.has(id)) errors.push(`demo ${d!.id}: related scenario "${id}" not found`);
 
+const topics = WorkTopicsSchema.parse(readJson('content/work-topics.json')).topics;
+const topicIds = new Set<string>();
+for (const t of topics) {
+  if (topicIds.has(t.id)) errors.push(`topic ${t.id}: duplicate id`);
+  topicIds.add(t.id);
+  for (const id of t.scenarios)
+    if (!scenarioIds.has(id)) errors.push(`topic ${t.id}: scenario "${id}" not found`);
+  for (const [cat, ids] of Object.entries(t.tags) as [keyof typeof tagSets, string[]][])
+    for (const id of ids) if (!tagSets[cat].has(id)) errors.push(`topic ${t.id}: unknown ${cat} tag "${id}"`);
+}
+const units = UnitsSchema.parse(readJson('content/units.json'));
+const unitIds = new Set<string>();
+for (const c of units.clusters) {
+  if (!tagSets.roles.has(c.role)) errors.push(`cluster ${c.id}: unknown role "${c.role}"`);
+  for (const u of c.units) {
+    if (unitIds.has(u.id)) errors.push(`unit ${u.id}: duplicate id`);
+    unitIds.add(u.id);
+    for (const t of u.topics) if (!topicIds.has(t)) errors.push(`unit ${u.id}: unknown topic "${t}"`);
+  }
+}
+const usedTopics = new Set(units.clusters.flatMap((c) => c.units.flatMap((u) => u.topics)));
+for (const t of topicIds)
+  if (!usedTopics.has(t))
+    console.warn(`note: topic ${t} is not linked to any unit (still offered under "other")`);
+
 if (errors.length) {
   console.error(`Content validation failed (${errors.length}):\n- ${errors.join('\n- ')}`);
   process.exit(1);
 }
-console.log(`Content OK: ${scenarioIds.size} scenarios, ${demoIds.size} demos.`);
+console.log(
+  `Content OK: ${scenarioIds.size} scenarios, ${demoIds.size} demos, ${topicIds.size} topics, ${unitIds.size} units.`,
+);

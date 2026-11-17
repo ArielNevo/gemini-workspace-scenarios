@@ -1,5 +1,6 @@
 import { OrgDataNotice } from '../../components/OrgDataNotice';
 import { Page } from '../../components/Page';
+import { ConsultCard } from '../../components/ConsultCard';
 import { ExternalLink } from '../../components/ExternalLink';
 import { siteConfig } from '../../lib/content';
 
@@ -48,6 +49,7 @@ export default function NoticePage() {
           )}
         </ul>
       </section>
+      <ConsultCard />
     </Page>
   );
 }

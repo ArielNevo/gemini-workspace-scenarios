@@ -1,0 +1,249 @@
+{
+  "note": "Public unit names and general work topics only. Never add figures, plans, staffing or any internal detail.",
+  "clusters": [
+    {
+      "id": "prosecution",
+      "label": "תביעה, ייצוג וסיוע משפטי",
+      "role": "legal",
+      "units": [
+        {
+          "id": "state-attorney",
+          "name": "פרקליטות המדינה",
+          "topics": ["case-preparation", "rulings", "legal-opinions", "management"]
+        },
+        {
+          "id": "legal-counsel-legislation",
+          "name": "מחלקת ייעוץ וחקיקה",
+          "topics": ["legislation", "legal-opinions", "rulings", "international"]
+        },
+        {
+          "id": "public-defense",
+          "name": "הסניגוריה הציבורית",
+          "topics": ["case-preparation", "rulings", "supervision", "legal-opinions"]
+        },
+        {
+          "id": "legal-aid",
+          "name": "הסיוע המשפטי",
+          "topics": ["case-preparation", "public-service", "rulings"]
+        },
+        {
+          "id": "legal-guidance",
+          "name": "היחידה להכוונה משפטית ראשונית ולמיצוי זכויות",
+          "topics": ["public-service", "complaints", "registration"]
+        },
+        {
+          "id": "pardons",
+          "name": "מחלקת חנינות",
+          "topics": ["appeals-decisions", "legal-opinions", "case-preparation"]
+        }
+      ]
+    },
+    {
+      "id": "tribunals",
+      "label": "שפיטה ובתי דין",
+      "role": "legal",
+      "units": [
+        {
+          "id": "entry-tribunals",
+          "name": "בתי הדין לעררים לפי חוק הכניסה לישראל",
+          "topics": ["appeals-decisions", "rulings", "case-preparation"]
+        },
+        {
+          "id": "employment-service-tribunal",
+          "name": "בית הדין לענייני שירות התעסוקה",
+          "topics": ["appeals-decisions", "rulings"]
+        },
+        {
+          "id": "druze-courts",
+          "name": "בתי הדין הדתיים הדרוזיים",
+          "topics": ["appeals-decisions", "rulings", "public-service"]
+        },
+        {
+          "id": "sharia-courts",
+          "name": "בתי הדין השרעיים",
+          "topics": ["appeals-decisions", "rulings", "public-service"]
+        },
+        {
+          "id": "traffic-tribunal",
+          "name": "בית הדין המנהלי לתעבורה",
+          "topics": ["appeals-decisions", "rulings"]
+        },
+        {
+          "id": "interrogee-complaints",
+          "name": "אגף בכיר לבירור תלונות נחקרים",
+          "topics": ["complaints", "supervision", "legal-opinions"]
+        },
+        {
+          "id": "planning-appeals",
+          "name": "נציג השרה במועצה הארצית לתכנון ובנייה",
+          "topics": ["appeals-decisions", "legal-opinions"]
+        },
+        {
+          "id": "appeals-committee-family",
+          "name": "ועדת ערר והיחידה לקשרי משפחה",
+          "topics": ["appeals-decisions", "rulings", "public-service"]
+        }
+      ]
+    },
+    {
+      "id": "commissions",
+      "label": "נציבויות ויחידות חברתיות",
+      "role": "service",
+      "units": [
+        {
+          "id": "judges-ombudsman",
+          "name": "נציבות תלונות הציבור על שופטים",
+          "topics": ["complaints", "legal-opinions"]
+        },
+        {
+          "id": "prosecutors-ombudsman",
+          "name": "נציבות הביקורת על התביעה (נת\"ם)",
+          "topics": ["complaints", "supervision"]
+        },
+        {
+          "id": "disability-equality",
+          "name": "נציבות שוויון זכויות לאנשים עם מוגבלות",
+          "topics": ["supervision", "legislation", "public-service", "complaints"]
+        },
+        {
+          "id": "crime-victims",
+          "name": "נציבות נפגעי עבירה",
+          "topics": ["public-service", "policy-research", "legislation"]
+        },
+        {
+          "id": "anti-racism",
+          "name": "היחידה לתיאום המאבק בגזענות",
+          "topics": ["complaints", "hr-training", "supervision"]
+        },
+        {
+          "id": "social-division",
+          "name": "החטיבה החברתית",
+          "topics": ["policy-research", "management", "public-service"]
+        }
+      ]
+    },
+    {
+      "id": "regulators",
+      "label": "רשויות, רגולציה ורישום",
+      "role": "operations",
+      "units": [
+        {
+          "id": "impa",
+          "name": "הרשות לאיסור הלבנת הון ומימון טרור",
+          "topics": ["international", "data-reports", "legislation", "supervision"]
+        },
+        {
+          "id": "land-registration",
+          "name": "הרשות לרישום והסדר זכויות מקרקעין",
+          "topics": ["registration", "public-service", "appeals-decisions"]
+        },
+        { "id": "land-appraisal", "name": "אגף שומת מקרקעין", "topics": ["data-reports", "legal-opinions"] },
+        {
+          "id": "insolvency",
+          "name": "הממונה על הליכי חדלות פירעון",
+          "topics": ["registration", "supervision", "public-service"]
+        },
+        {
+          "id": "administrator-general",
+          "name": "האפוטרופוס הכללי",
+          "topics": ["supervision", "public-service", "registration"]
+        },
+        {
+          "id": "patents",
+          "name": "רשות הפטנטים",
+          "topics": ["registration", "international", "appeals-decisions"]
+        },
+        {
+          "id": "corporations",
+          "name": "רשות התאגידים",
+          "topics": ["registration", "supervision", "public-service"]
+        },
+        {
+          "id": "privacy",
+          "name": "הרשות להגנת הפרטיות",
+          "topics": ["supervision", "legislation", "public-service"]
+        },
+        { "id": "professions", "name": "האגף לאסדרת מקצועות", "topics": ["registration", "supervision"] },
+        {
+          "id": "internal-audit-profession",
+          "name": "היחידה לאסדרת מקצוע הביקורת הפנימית",
+          "topics": ["supervision", "registration"]
+        },
+        {
+          "id": "freedom-of-information",
+          "name": "היחידה הממשלתית לחופש המידע",
+          "topics": ["supervision", "public-service", "hr-training"]
+        },
+        {
+          "id": "public-information",
+          "name": "הממונה על העמדת מידע לציבור",
+          "topics": ["public-service", "data-reports"]
+        },
+        {
+          "id": "religious-communities",
+          "name": "היחידה להמרות דת, עדות נוצריות וברית הזוגיות",
+          "topics": ["registration", "legal-opinions", "public-service"]
+        }
+      ]
+    },
+    {
+      "id": "hq",
+      "label": "יחידות מטה",
+      "role": "hq-staff",
+      "units": [
+        {
+          "id": "policy-strategy",
+          "name": "חטיבת תכנון מדיניות ואסטרטגיה",
+          "topics": ["policy-research", "public-participation", "data-reports", "management"]
+        },
+        {
+          "id": "human-capital",
+          "name": "חטיבת ההון האנושי",
+          "topics": ["hr-training", "operations-procurement", "management"]
+        },
+        {
+          "id": "finance",
+          "name": "אגף הכספים",
+          "topics": ["budget-finance", "operations-procurement", "data-reports"]
+        },
+        {
+          "id": "budget",
+          "name": "אגף תקציבים, כלכלה ופיקוח",
+          "topics": ["budget-finance", "data-reports", "legislation"]
+        },
+        {
+          "id": "operations-logistics",
+          "name": "חטיבת תפעול ולוגיסטיקה",
+          "topics": ["operations-procurement", "budget-finance"]
+        },
+        {
+          "id": "information-systems",
+          "name": "אגף מערכות מידע",
+          "topics": ["operations-procurement", "management", "hr-training"]
+        },
+        {
+          "id": "public-service-division",
+          "name": "אגף השירות לציבור",
+          "topics": ["complaints", "public-service", "data-reports"]
+        },
+        {
+          "id": "spokesperson",
+          "name": "אגף דוברות, הסברה ותקשורת",
+          "topics": ["communications", "public-service"]
+        },
+        {
+          "id": "emergency-cyber",
+          "name": "אגף חירום, ביטחון מידע וסייבר",
+          "topics": ["operations-procurement", "hr-training"]
+        },
+        {
+          "id": "legal-bureau",
+          "name": "הלשכה המשפטית",
+          "topics": ["legal-opinions", "operations-procurement", "legislation"]
+        },
+        { "id": "internal-audit", "name": "אגף ביקורת פנים", "topics": ["supervision", "data-reports"] },
+        { "id": "foreign-relations", "name": "קשרי חוץ", "topics": ["international", "communications"] }
+      ]
+    }
+  ]
+}

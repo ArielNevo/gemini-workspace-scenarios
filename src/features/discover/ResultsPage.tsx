@@ -1,10 +1,13 @@
 import { lazy, Suspense, useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { OrgDataNotice } from '../../components/OrgDataNotice';
 import { Page } from '../../components/Page';
 import { DraftBadge, ToolBadge } from '../../components/Badges';
 import { ExternalLink } from '../../components/ExternalLink';
-import { siteConfig, t, taxonomy } from '../../lib/content';
+import { getTopic, getUnit, scenarios, siteConfig, t, taxonomy } from '../../lib/content';
+import { inputFromTopic, recommendForTopic } from '../../lib/recommend/topic';
+import { ConsultCard } from '../../components/ConsultCard';
+import { FamilyIcon } from '../../components/Illustrations';
 import { decodeSelection, encodeSelection } from '../../lib/share';
 import { useAppState } from '../../app/state';
 import { ruleRecommender } from '../../app/recommender';
@@ -24,7 +27,18 @@ const FEEDBACK: { value: FeedbackValue; label: string }[] = [
 export default function ResultsPage() {
   const { state, dispatch } = useAppState();
   const location = useLocation();
+  const navigate = useNavigate();
   const [aiNotice, setAiNotice] = useState(false);
+  const params = new URLSearchParams(location.search);
+  const topic = getTopic(params.get('topic') ?? '');
+  const unit = getUnit(params.get('unit') ?? '');
+
+  // Quick path: unit + topic → curated suggestions.
+  useEffect(() => {
+    if (!topic) return;
+    dispatch({ type: 'setQuick', quick: { unitId: unit?.id ?? 'other', topicId: topic.id } });
+    dispatch({ type: 'setResults', results: recommendForTopic(topic, scenarios) });
+  }, [topic, unit, dispatch]);
 
   // A share link carries tag ids only; apply it once.
   useEffect(() => {
@@ -33,7 +47,8 @@ export default function ResultsPage() {
   }, [location.search, dispatch]);
 
   useEffect(() => {
-    if (state.results !== null || state.input.tasks.length + state.input.outputs.length === 0) return;
+    if (topic || state.results !== null || state.input.tasks.length + state.input.outputs.length === 0)
+      return;
     let live = true;
     void ruleRecommender.recommend(state.input).then((results) => {
       if (live) dispatch({ type: 'setResults', results });
@@ -41,9 +56,13 @@ export default function ResultsPage() {
     return () => {
       live = false;
     };
-  }, [state.input, state.results, dispatch]);
+  }, [topic, state.input, state.results, dispatch]);
 
-  const empty = state.input.tasks.length === 0 && state.input.outputs.length === 0;
+  const empty = !topic && state.input.tasks.length === 0 && state.input.outputs.length === 0;
+  const deepen = () => {
+    if (topic) dispatch({ type: 'setInput', input: inputFromTopic(topic, unit?.cluster.role) });
+    void navigate('/start');
+  };
   const results = state.results;
   const shareHref = `#/results?${encodeSelection(state.input)}`;
 
@@ -51,6 +70,16 @@ export default function ResultsPage() {
     <Page title="אלה השימושים שכדאי לך לבדוק">
       <OrgDataNotice variant="inline" message="inline" />
       <OrgDataNotice variant="inline" message="experimentOnly" />
+      {topic && (
+        <p className="context-line">
+          {unit && (
+            <>
+              <span className="badge">{unit.name}</span>{' '}
+            </>
+          )}
+          <span className="badge badge-topic">{topic.label}</span> <Link to="/#quick">שנו</Link>
+        </p>
+      )}
       {empty ? (
         <p>
           עוד לא בחרתם משימות. <Link to="/start">התחילו כאן</Link>.
@@ -81,7 +110,8 @@ export default function ResultsPage() {
               {aiNotice && <p className="notice-soft">{t('ai.unavailable')}</p>}
               <ol className="result-list">
                 {results.map((r) => (
-                  <li key={r.scenario.id} className="card result-card">
+                  <li key={r.scenario.id} className={`card result-card fam-${r.scenario.family}`}>
+                    <FamilyIcon family={r.scenario.family} />
                     <div className="card-badges">
                       <ToolBadge tool={r.scenario.tool} />
                       <DraftBadge status={r.scenario.status} />
@@ -129,12 +159,20 @@ export default function ResultsPage() {
                 <Link to="/card" className="button button-primary">
                   לכרטיס השימושים שלי
                 </Link>
-                <Link to="/start" className="button">
-                  שנו את הבחירות
-                </Link>
-                <a href={shareHref} className="button">
-                  קישור לבחירות האלה
-                </a>
+                {topic ? (
+                  <button type="button" className="button" onClick={deepen}>
+                    דייקו את ההתאמה (2 שאלות)
+                  </button>
+                ) : (
+                  <Link to="/start" className="button">
+                    שנו את הבחירות
+                  </Link>
+                )}
+                {!topic && (
+                  <a href={shareHref} className="button">
+                    קישור לבחירות האלה
+                  </a>
+                )}
               </div>
               {AiAssistPanel && (
                 <Suspense fallback={null}>
@@ -149,6 +187,14 @@ export default function ResultsPage() {
               )}
             </>
           )}
+          <ConsultCard
+            compact
+            reason={
+              results && results.length === 0
+                ? 'לא מצאנו שימוש מובהק. אפשר לפנות ולספר במה אתם עוסקים, ונחשוב יחד.'
+                : undefined
+            }
+          />
           <p className="small">
             {t('results.missingNeed')}
             {siteConfig.feedbackUrl ? (

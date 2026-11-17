@@ -1,4 +1,5 @@
 import { Page } from '../../components/Page';
+import { ConsultCard } from '../../components/ConsultCard';
 import { formatDate } from '../../components/Badges';
 import { scenarios, siteConfig } from '../../lib/content';
 
@@ -35,6 +36,7 @@ export default function AboutPage() {
           {drafts} בסטטוס טיוטה שטרם נבדקה.
         </p>
       </section>
+      <ConsultCard />
     </Page>
   );
 }

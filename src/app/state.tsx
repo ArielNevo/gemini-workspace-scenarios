@@ -3,7 +3,13 @@ import { EMPTY_INPUT, type DiscoveryInput, type Recommendation } from '../lib/re
 import type { FeedbackValue } from '../lib/storage';
 import { loadState } from '../lib/storage';
 
+export interface QuickSelection {
+  unitId?: string;
+  topicId?: string;
+}
+
 export interface AppState {
+  quick: QuickSelection;
   input: DiscoveryInput;
   results: Recommendation[] | null;
   aiUsed: boolean;
@@ -13,6 +19,7 @@ export interface AppState {
 }
 
 type Action =
+  | { type: 'setQuick'; quick: QuickSelection }
   | { type: 'setInput'; input: DiscoveryInput }
   | { type: 'setResults'; results: Recommendation[]; aiUsed?: boolean }
   | { type: 'toggleChosen'; id: string }
@@ -23,6 +30,7 @@ type Action =
 function initial(): AppState {
   const saved = loadState();
   return {
+    quick: saved?.quick ?? {},
     input: saved?.input ?? EMPTY_INPUT,
     results: null,
     aiUsed: false,
@@ -34,6 +42,8 @@ function initial(): AppState {
 
 function reducer(state: AppState, action: Action): AppState {
   switch (action.type) {
+    case 'setQuick':
+      return { ...state, quick: action.quick };
     case 'setInput':
       return { ...state, input: action.input, results: null };
     case 'setResults':
@@ -55,7 +65,15 @@ function reducer(state: AppState, action: Action): AppState {
     case 'markSaved':
       return { ...state, saved: action.saved };
     case 'reset':
-      return { input: EMPTY_INPUT, results: null, aiUsed: false, chosen: [], feedback: {}, saved: false };
+      return {
+        quick: {},
+        input: EMPTY_INPUT,
+        results: null,
+        aiUsed: false,
+        chosen: [],
+        feedback: {},
+        saved: false,
+      };
   }
 }
 

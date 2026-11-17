@@ -1,22 +1,38 @@
 {
   "siteTitle": "גלו איפה Gemini יכול לעזור בעבודה שלכם",
-  "orgDisplayName": "",
+  "orgDisplayName": "משרד המשפטים",
   "logoPath": "",
   "disclaimer": "אתר ניסיוני להכרת תרחישי שימוש. אינו מחליף את הנחיות הארגון.",
   "robots": "noindex,nofollow",
   "catalogUpdatedOn": "2026-11-17",
   "requestAccess": {
-    "mode": "none",
-    "url": "",
+    "mode": "url",
+    "url": "https://forms.monday.com/forms/54146edf2d8bca953db2eb4a587263f0?r=euc1",
     "mailto": "",
-    "subject": "בקשה להתנסות ב-Gemini",
-    "prefill": { "param": "", "maxChars": 1500 }
+    "subject": "בקשה לרישיון Google Workspace או Gemini Enterprise",
+    "prefill": {
+      "param": "",
+      "maxChars": 1500
+    }
   },
   "feedbackUrl": "",
+  "consult": {
+    "name": "אריאל נבו",
+    "role": "CDO משרד המשפטים",
+    "url": "https://forms.monday.com/forms/54146edf2d8bca953db2eb4a587263f0?r=euc1",
+    "note": "לא בטוחים מה מתאים לכם, איזה שירות לבקש, או האם מותר להשתמש בחומר מסוים? פנו להתייעצות."
+  },
   "orgGuidelinesUrl": "",
   "nationalGuideUrl": "https://www.gov.il/BlobFolder/news/ai-guide/he/DL-57390%20AI%20Responsible%20Use%20Manual-hebrew.pdf",
   "recommend": {
-    "weights": { "tasks": 3, "outputs": 2, "materials": 2, "difficulties": 2, "roles": 1, "frequency": 0.5 },
+    "weights": {
+      "tasks": 3,
+      "outputs": 2,
+      "materials": 2,
+      "difficulties": 2,
+      "roles": 1,
+      "frequency": 0.5
+    },
     "threshold": 5,
     "diversityGap": 2,
     "maxResults": 3

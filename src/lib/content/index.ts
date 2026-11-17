@@ -1,10 +1,12 @@
 import taxonomyJson from '../../../content/taxonomy.json';
 import copyJson from '../../../content/copy.he.json';
 import synonymsJson from '../../../content/synonyms.json';
+import workTopicsJson from '../../../content/work-topics.json';
+import unitsJson from '../../../content/units.json';
 import siteConfigJson from '@site-config';
-import type { Demo, Scenario, SiteConfig, Taxonomy, Tool, Family } from './schema';
+import type { Demo, Scenario, SiteConfig, Taxonomy, Tool, Family, Units, WorkTopic } from './schema';
 
-export type { Demo, Scenario, SiteConfig, Taxonomy, Tool, Family };
+export type { Demo, Scenario, SiteConfig, Taxonomy, Tool, Family, Units, WorkTopic };
 
 const scenarioModules = import.meta.glob('../../../content/scenarios/*.json', {
   eager: true,
@@ -68,3 +70,20 @@ export const FAMILY_LABELS: Record<Family, string> = {
   write: 'לכתוב ולנסח',
   learn: 'ללמוד וללמד',
 };
+
+export const workTopics = (workTopicsJson as { topics: WorkTopic[] }).topics;
+export const units = unitsJson as Units;
+export const allUnits = units.clusters.flatMap((c) => c.units.map((u) => ({ ...u, cluster: c })));
+export type UnitWithCluster = (typeof allUnits)[number];
+export function getUnit(id: string): UnitWithCluster | undefined {
+  return allUnits.find((u) => u.id === id);
+}
+export function getTopic(id: string): WorkTopic | undefined {
+  return workTopics.find((t) => t.id === id);
+}
+/** Topics offered for a unit; "other" (or unknown unit) gets every topic. */
+export function topicsForUnit(unitId: string): WorkTopic[] {
+  const u = getUnit(unitId);
+  if (!u) return workTopics;
+  return u.topics.map(getTopic).filter((t): t is WorkTopic => t !== undefined);
+}

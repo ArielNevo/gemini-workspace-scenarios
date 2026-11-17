@@ -158,6 +158,7 @@ export const SiteConfigSchema = z.object({
     prefill: z.object({ param: z.string(), maxChars: z.number().int().positive() }),
   }),
   feedbackUrl: z.string(),
+  consult: z.object({ name: z.string(), role: z.string(), url: z.string(), note: z.string() }),
   orgGuidelinesUrl: z.string(),
   nationalGuideUrl: z.string(),
   recommend: z.object({
@@ -175,10 +176,45 @@ export const SiteConfigSchema = z.object({
   }),
 });
 
+const TopicTags = z.object({
+  tasks: z.array(nonEmpty).min(1),
+  difficulties: z.array(nonEmpty),
+  materials: z.array(nonEmpty),
+  outputs: z.array(nonEmpty).min(1),
+});
+export const WorkTopicsSchema = z.object({
+  topics: z
+    .array(
+      z.object({
+        id: z.string().regex(/^[a-z0-9-]+$/),
+        label: nonEmpty,
+        hint: nonEmpty,
+        scenarios: z.array(nonEmpty).min(2).max(4),
+        tags: TopicTags,
+      }),
+    )
+    .min(1),
+});
+export const UnitsSchema = z.object({
+  note: z.string(),
+  clusters: z
+    .array(
+      z.object({
+        id: nonEmpty,
+        label: nonEmpty,
+        role: nonEmpty,
+        units: z.array(z.object({ id: nonEmpty, name: nonEmpty, topics: z.array(nonEmpty).min(1) })).min(1),
+      }),
+    )
+    .min(1),
+});
+
 export type Tool = z.infer<typeof ToolSchema>;
 export type Family = z.infer<typeof FamilySchema>;
 export type Scenario = z.infer<typeof ScenarioSchema>;
 export type Demo = z.infer<typeof DemoSchema>;
 export type Taxonomy = z.infer<typeof TaxonomySchema>;
 export type SiteConfig = z.infer<typeof SiteConfigSchema>;
+export type WorkTopic = z.infer<typeof WorkTopicsSchema>['topics'][number];
+export type Units = z.infer<typeof UnitsSchema>;
 export type TagCategory = keyof Scenario['tags'];

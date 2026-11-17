@@ -1,0 +1,49 @@
+{
+  "id": "periodic-report-from-data",
+  "family": "understand",
+  "title": "אני מכין דוח תקופתי מנתונים",
+  "userNeed": "אני מכין דוח תקופתי מנתונים בגיליון, ורוצה להגיע מהר לתמונה של מה השתנה בתקופה ומה בולט.",
+  "tool": "gemini-in-workspace-apps",
+  "whatYouGet": "סיכום במילים של הנתונים לתקופה: מגמות, שינויים לעומת התקופה הקודמת וחריגים בולטים, כבסיס לטקסט של הדוח.",
+  "tags": {
+    "tasks": ["work-with-data"],
+    "difficulties": ["starting", "checking"],
+    "materials": ["table"],
+    "outputs": ["summary"],
+    "roles": ["hq-staff", "management"],
+    "frequency": ["often"]
+  },
+  "priority": 3,
+  "firstExperiment": {
+    "materialSuggestion": "טבלה מדומה שהכנתם עם נתונים לכמה תקופות, או נתונים פתוחים שפורסמו לציבור באתר ממשלתי.",
+    "steps": [
+      "פתחו את הטבלה ב-Sheets ופתחו את לוח הצד של Gemini.",
+      "בקשו סיכום לתקופה האחרונה: מה השתנה לעומת התקופה הקודמת ומה בולט.",
+      "בחרו שני מספרים מהסיכום ובדקו אותם בעצמכם בגיליון."
+    ],
+    "successCriteria": ["המספרים שבדקתם נכונים.", "הסיכום מתאר נכון את מה שרואים בטבלה."],
+    "timeBoxMinutes": 30
+  },
+  "whatToVerify": [
+    "כל מספר, סכום או השוואה בסיכום, מול הגיליון.",
+    "שהכלי קרא את העמודות הנכונות ואת התקופה הנכונה. הכלי עלול לפרש עמודה לא נכון.",
+    "שהכלי לא הסיק קשר של סיבה ותוצאה מנתונים שאינם מאפשרים זאת."
+  ],
+  "limitations": [
+    "הכלי עלול לטעות בחישוב או לפרש לא נכון עמודה שהכותרת שלה לא ברורה.",
+    "לוח הצד של Sheets הוא חלק מ-Gemini ביישומי Workspace. זמינותו תיבדק עם הקצאת הרישיון."
+  ],
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://support.google.com/drive/answer/14925782",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "listed",
+    "note": "לפי רשימת השפות של Google ל-Gemini ב-Workspace (נבדק ב-17.11.2026), העברית מופיעה ברשימה של לוח הצד ב-Sheets. כדאי לבדוק בעת ההתנסות איך הכלי מתמודד עם כותרות ונתונים בעברית.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

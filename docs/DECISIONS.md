@@ -50,3 +50,15 @@ Format: decision · reason · rejected alternative. Dated 2026-11-17 unless note
 
 - Lighthouse was not run in CI (would add a network-heavy dependency). Initial load is 101 KB gzip (budget 200 KB). Run Lighthouse manually once deployed.
 - Time calculator implemented as a collapsed "conditional illustration" on the card page; it stores nothing.
+
+## Round 2 (2026-11-17): units, quick path, design, consult
+
+- **Owner decision:** show the Justice Ministry's real unit names and the org name on the public site; route consultations to the CDO (Ariel Nevo) by name, via the request form, with no email on the site. Recorded here because it reverses the brief's default (`orgDisplayName` empty).
+- **Only names and generic topics are committed.** The owner supplied unit descriptions including caseload figures, plans, staffing and reorganizations. None of that is in the repo; it was used only to choose each unit's topics. Units the owner marked "no info" or "general knowledge" got topics by name only. Rejected: unit descriptions on the site.
+- **Quick path = curated, not scored.** 19 work topics (`content/work-topics.json`), each with 3 hand-picked scenarios and a tag set. Unit → its topics → 3 suggestions with a verbal reason ("…כי ציינת שאתם עוסקים ב…"). "דייקו את ההתאמה" pre-fills the detailed questionnaire from the topic tags plus the cluster's role. Rejected: scoring the unit itself (unit names carry no tag semantics and would look arbitrary).
+- **5 new scenarios** for recurring ministry-type work, generic and public/mock material only: summarize-public-ruling, reply-to-public-inquiry, summarize-public-comments, periodic-report-from-data, decision-template. All `draft`.
+- **Request access = the Monday form** (`mode: url`). The form has no prefill parameter we could verify, so the card shows the summary with a copy button, then opens the form. The form also asks to choose a service (Google Workspace / Gemini Enterprise); the site does not advise which, and points to the CDO instead.
+- **Design:** self-hosted Heebo variable font (`@fontsource-variable/heebo`, OFL, bundled, no third-party request), gradient palette, animated SVG hero and family icons (CSS animation, disabled under `prefers-reduced-motion`), sticky header on wide screens only.
+- **Video:** a 14-second silent screen recording of the site itself (`public/media/quick-path.webm`, 447 KB, poster JPG), made with Playwright + the studio's ffmpeg (VP9, CRF 42). Accurate by construction, unlike generated clips. Autoplays muted only without reduced motion; has controls and a text description.
+- **AI-Studio images/video not used this round:** Draw Things' API server was off (it must be enabled by hand after every launch), and LTX only does image-to-video. Generated hero images can be added later without code changes.
+- Initial load after the redesign: 112.9 KB gzip (budget 200 KB).
