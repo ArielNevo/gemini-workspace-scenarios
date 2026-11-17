@@ -6,7 +6,7 @@ test('avatar greeting plays with captions in the bubble and an AI label', async 
   await go(page, '/');
   await expect(page.locator('.ai-label')).toContainText('אווטאר וקול שנוצרו ב-AI');
   await page.getByRole('button', { name: /כן, ספר לי/ }).click();
-  await expect(page.locator('.bubble-text')).toContainText('אריאל נבו', { timeout: 5000 });
+  await expect(page.locator('.bubble-text')).toContainText('Gemini יכול לעזור', { timeout: 8000 });
   await expect(page.locator('.figure canvas')).not.toHaveClass(/is-hidden/);
   await page.getByRole('button', { name: /עצור/ }).click();
   await expect(page.getByRole('button', { name: /כן, ספר לי/ })).toBeVisible();

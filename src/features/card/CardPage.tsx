@@ -27,7 +27,7 @@ export default function CardPage() {
   const [status, setStatus] = useState('');
   const chosen = state.chosen.map(getScenario).filter((s) => s !== undefined);
   const reasons = new Map((state.results ?? []).map((r) => [r.scenario.id, r.reason]));
-  const caution = state.input.materialClass === 'internal' || state.input.materialClass === 'protected';
+  const caution = state.input.materialClass === 'protected';
 
   const payload: AccessPayload = useMemo(
     () => ({
@@ -251,7 +251,7 @@ export default function CardPage() {
       <ConsultCard
         reason={
           caution
-            ? 'סימנתם שאתם עובדים עם חומר פנימי או מוגן. לפני שמשתמשים בכלי על חומר כזה, כדאי להתייעץ.'
+            ? 'סימנתם שאתם עובדים עם חומר מוגן או רגיש. לפני שמשתמשים בכלי על חומר כזה, כדאי להתייעץ.'
             : 'בטופס תתבקשו לבחור שירות. לא בטוחים מה מתאים לכם? פנו להתייעצות.'
         }
       />

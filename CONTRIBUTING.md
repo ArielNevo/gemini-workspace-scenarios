@@ -9,7 +9,7 @@
 3. תגיות רק מתוך `content/taxonomy.json`.
 4. `status: "draft"`, `capability.includedInOrgPackage: "unknown"`, `capability.verifiedInOrg: false`. רק אדם שבדק משנה אותם.
 5. `capability.sourceUrl` הוא מקור רשמי של Google, ו-`checkedOn` הוא התאריך שבו נבדק בפועל.
-6. `firstExperiment.materialSuggestion` מציע רק חומר פומבי או מדומה.
+6. `firstExperiment.materialSuggestion` מתאר סוג חומר מהעבודה בלשון כללית, בלי שמות של מסמכים, תיקים או מערכות אמיתיים.
 7. אין הבטחות חיסכון, אין אחוזים, אין טענות על הגנת מידע או אזור נתונים של Google.
 8. הריצו `npm run content:validate && npm run content:lint`.
 

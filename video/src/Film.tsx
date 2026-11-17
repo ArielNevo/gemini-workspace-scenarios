@@ -74,38 +74,6 @@ function Tile({ label, bg, fg = C.ink }: { label: string; bg: string; fg?: strin
   );
 }
 
-function Logo({ size = 64 }: { size?: number }) {
-  const tiles = [
-    ['Ar', '#bcdcf7', C.ink],
-    ['Iel', '#cdeedd', C.ink],
-    ['Ne', '#0f6d62', C.paper],
-    ['vo', '#b8651b', C.paper],
-  ];
-  return (
-    <div style={{ display: 'flex', gap: size / 8, direction: 'ltr' }}>
-      {tiles.map(([t, bg, fg]) => (
-        <div
-          key={t}
-          style={{
-            width: size,
-            height: size,
-            borderRadius: size / 4.3,
-            background: bg,
-            color: fg,
-            display: 'grid',
-            placeItems: 'center',
-            fontFamily: SANS,
-            fontWeight: 800,
-            fontSize: size / 2,
-          }}
-        >
-          {t}
-        </div>
-      ))}
-    </div>
-  );
-}
-
 /** Rounded "screen" with a clip from the official channel, slowed to fill its slot if needed. */
 function ClipFrame({ src, slot, clipSeconds }: { src: string; slot: number; clipSeconds: number }) {
   const { fps } = useVideoConfig();
@@ -287,7 +255,7 @@ function S4({ s }: { s: Scene }) {
 function S5({ s }: { s: Scene }) {
   const len = s.end - s.start;
   const rules = [
-    ['1', 'מתחילים בחומר פומבי או מדומה', C.teal, C.paper],
+    ['1', 'עובדים בחשבון הארגוני', C.teal, C.paper],
     ['2', 'בודקים כל תשובה מול המקור', C.mint, C.ink],
     ['3', 'כשיש ספק, מתייעצים', C.blue, C.ink],
   ];
@@ -316,10 +284,7 @@ function S6({ s }: { s: Scene }) {
       <Img src={staticFile('art/hero.jpg')} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
       <AbsoluteFill style={{ background: 'rgba(246,243,236,0.88)' }} />
       <AbsoluteFill style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 40, paddingBottom: 120 }}>
-        <Rise>
-          <Logo size={90} />
-        </Rise>
-        <Rise delay={8}>
+        <Rise delay={4}>
           <div style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: 92, textAlign: 'center', lineHeight: 1.1, maxWidth: 1700 }}>
             גלו איפה <span style={{ color: C.signal }}>Gemini</span> יכול לעזור בעבודה שלכם
           </div>

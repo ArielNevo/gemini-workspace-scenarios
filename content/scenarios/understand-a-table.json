@@ -15,7 +15,7 @@
   },
   "priority": 3,
   "firstExperiment": {
-    "materialSuggestion": "טבלת נתונים ציבורית שהורדתם מאתר ממשלתי, או טבלה מדומה שהכנתם.",
+    "materialSuggestion": "טבלת נתונים מהעבודה, ב-Google Sheets.",
     "steps": [
       "פתחו את הטבלה ב-Sheets ופתחו את לוח הצד של Gemini.",
       "בקשו הסבר: מה העמודות, מה הטווחים ומה בולט בנתונים.",

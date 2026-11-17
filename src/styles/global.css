@@ -250,20 +250,6 @@ main {
 .brand-logo {
   block-size: 2rem;
 }
-.logo {
-  overflow: visible;
-  flex: none;
-}
-.logo-arc {
-  stroke-dasharray: 60;
-  stroke-dashoffset: 60;
-  animation: draw 1.1s 0.3s ease forwards;
-}
-@keyframes draw {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
 .nav {
   display: flex;
   flex-wrap: wrap;

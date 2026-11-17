@@ -71,3 +71,9 @@ Format: decision · reason · rejected alternative. Dated 2026-11-17 unless note
 - **Film (49.5 s)**: Remotion, narration in Ariel's cloned voice is the clock, captions in full spelling, five short product moments (5–8 s each) from the official Google Workspace YouTube channel with an on-screen credit and a credit in the end card and on the site, as Ariel asked. Clips are not committed; `video/scripts/fetch-clips.sh` re-creates them. Loudness -15.9 LUFS. Web copy: 1280×720, 2.8 MB, `preload="none"`, transcript on the page.
 - **Copyright note for the owner**: the product moments are Google's. They are short, credited and used to illustrate the products; whether this use is acceptable for a public government-facing site is the owner's decision (recorded in HUMAN_CHECKLIST). Rejected: embedding YouTube players (third-party requests, cookies).
 - The walkthrough recording (`quick-path.webm`) was re-recorded after the redesign.
+
+## סבב 4 (17.11.2026)
+
+- **עבודה על מסמכים ארגוניים.** לפי החלטת הבעלים, השימוש ב-Gemini וב-Gemini Notebook בחשבון הארגוני מותר גם על מסמכי עבודה. כל ההנחיות באתר עודכנו: אין עוד הפניה לחומר פומבי או מדומה בהתנסות. הערת הזהירות בכרטיס מופיעה רק למי שסימן חומר מוגן או רגיש. האתר עצמו והריפו עדיין לא מקבלים מידע ארגוני, וההדגמות באתר נשארות על מסמכים מדומים כי הריפו פומבי.
+- **הלוגו הוסר** מהכותרת ומהסרט.
+- **קריינות:** האווטאר אומר "אריאל" בלבד (ההגייה של "נבו" לא הייתה טובה). בסרט: "פסקי דין" במקום "פסקים", המשפט "מכל כיוון" הוחלף ב"שלא נגמרות", והכלל הראשון הוא "עובדים בחשבון הארגוני".
