@@ -1,0 +1,49 @@
+{
+  "id": "check-consistency",
+  "family": "compare",
+  "title": "אני רוצה לבדוק אם מסמך סותר מסמכים אחרים באותו נושא",
+  "userNeed": "אני רוצה לבדוק אם מסמך חדש סותר מסמכים אחרים באותו נושא.",
+  "tool": "gemini-notebook",
+  "whatYouGet": "רשימה של סתירות אפשריות בין המסמך לשאר המקורות, עם הפניות לקטעים הרלוונטיים.",
+  "tags": {
+    "tasks": ["compare", "read-documents"],
+    "difficulties": ["checking", "comparing"],
+    "materials": ["several-docs"],
+    "outputs": ["change-table", "checklist"],
+    "roles": ["legal", "hq-staff"],
+    "frequency": ["sometimes"]
+  },
+  "priority": 3,
+  "firstExperiment": {
+    "materialSuggestion": "כמה מסמכים ציבוריים בנושא אחד, או סט מסמכים מדומים שהכנסתם אליו בכוונה סתירה אחת או שתיים.",
+    "steps": [
+      "הוסיפו למחברת את המסמך שבודקים ואת המסמכים שמולם בודקים.",
+      "בקשו רשימה של מקומות שבהם המסמך עשוי לסתור את המקורות האחרים, עם הפניות.",
+      "בדקו כל ממצא מול שני הקטעים, ובדקו אם הסתירה שהכנסתם בכוונה נמצאה."
+    ],
+    "successCriteria": ["הסתירות שאתם יודעים עליהן נמצאו.", "רוב הממצאים הם סתירות אמיתיות ולא אי-הבנות."],
+    "timeBoxMinutes": 40
+  },
+  "whatToVerify": [
+    "כל סתירה שצוינה, מול שני הקטעים במקור.",
+    "שהיעדר ממצא לא מתפרש כאישור שאין סתירות.",
+    "ההפניות למקורות מאפשרות לבדוק את התשובה, אבל אינן מבטיחות שהמסקנה נכונה."
+  ],
+  "limitations": [
+    "מקורות שמייבאים מ-Drive מועתקים למחברת. לפני שמוסיפים חומר, פעלו לפי הנחיות הארגון בנוגע למידע מוגן.",
+    "כלי יכול להחמיץ סתירה מהותית, במיוחד כשהיא נובעת משילוב של כמה סעיפים. רשימה ריקה אינה הוכחה שהמסמכים עקביים."
+  ],
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://knowledge.workspace.google.com/admin/generative-ai/notebooklm",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "unknown",
+    "note": "לפי דף Google על Gemini Notebook (נבדק ב-17.11.2026), הכלי תומך ביותר מ-80 שפות, אבל הדף אינו מפרט אותן ולא מצאנו בו אזכור מפורש של עברית. כדאי לבדוק את העבודה בעברית בעת ההתנסות.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

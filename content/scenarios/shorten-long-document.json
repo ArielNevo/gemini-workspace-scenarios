@@ -1,0 +1,45 @@
+{
+  "id": "shorten-long-document",
+  "family": "understand",
+  "title": "המסמכים שלי ארוכים מדי",
+  "userNeed": "אני מקבל מסמכים ארוכים וצריך להבין במהירות מה העיקר בהם.",
+  "tool": "gemini",
+  "whatYouGet": "תקציר של המסמך ברמת הפירוט שתבחרו: כמה שורות, עמוד אחד או רשימת נקודות.",
+  "tags": {
+    "tasks": ["read-documents"],
+    "difficulties": ["too-much-material"],
+    "materials": ["single-doc"],
+    "outputs": ["summary"],
+    "roles": ["hq-staff", "management"],
+    "frequency": ["often"]
+  },
+  "priority": 4,
+  "firstExperiment": {
+    "materialSuggestion": "מסמך ציבורי ארוך שאתם מכירים, כמו דוח שפורסם באתר ממשלתי.",
+    "steps": [
+      "צרפו את המסמך ל-Gemini ובקשו תקציר של עד חצי עמוד.",
+      "בקשו גרסה נוספת: חמש נקודות עיקריות.",
+      "השוו את התקציר למסמך המקורי, לפחות בסעיפים החשובים לכם."
+    ],
+    "successCriteria": ["התקציר תואם את מה שאתם יודעים על המסמך.", "אין בתקציר טענות שלא מופיעות במסמך."],
+    "timeBoxMinutes": 20
+  },
+  "whatToVerify": ["שמספרים, תאריכים ותנאים הועתקו נכון.", "שלא הושמטו חריגים או סייגים חשובים."],
+  "limitations": [
+    "במסמך ארוך מאוד הכלי עלול לפספס פרטים או קשרים בין חלקים שונים.",
+    "תקציר אינו מחליף קריאה של הסעיפים שעליהם תתבססו בהחלטה."
+  ],
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://support.google.com/gemini/answer/14903178",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "listed",
+    "note": "לפי דף העזרה של Google על אפליקציית Gemini באינטרנט (נבדק ב-17.11.2026), העברית מופיעה ברשימת השפות הנתמכות. איכות התוצר בעברית במשימה הזו לא נבדקה, וכדאי לבדוק אותה בעת ההתנסות.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

@@ -1,0 +1,52 @@
+{
+  "id": "public-sources-overview",
+  "family": "compare",
+  "title": "אני צריך סקירה ראשונית ממקורות פומביים",
+  "userNeed": "אני צריך להבין מה ידוע ממקורות פומביים על נושא מסוים, לפני שאני מתחיל לעבוד עליו.",
+  "tool": "gemini",
+  "whatYouGet": "דוח סקירה ראשוני שנבנה ממקורות פומביים ברשת, עם המקורות שעליהם הוא נשען.",
+  "tags": {
+    "tasks": ["read-documents", "learn-teach"],
+    "difficulties": ["starting", "finding-info"],
+    "materials": ["none-yet"],
+    "outputs": ["summary"],
+    "roles": ["hq-staff", "management"],
+    "frequency": ["sometimes"]
+  },
+  "priority": 3,
+  "firstExperiment": {
+    "materialSuggestion": "נושא ציבורי כללי שאתם מכירים היטב, כדי שתוכלו לשפוט את איכות הסקירה.",
+    "steps": [
+      "בחרו ב-Gemini באפשרות Deep Research (מחקר מעמיק), ונסחו שאלה על נושא ציבורי בלי מידע ארגוני.",
+      "עברו על תוכנית המחקר שהכלי מציע, ועדכנו אותה לפני שמתחילים.",
+      "פתחו לפחות שלושה מהמקורות שבדוח ובדקו שהם אומרים את מה שמיוחס להם."
+    ],
+    "successCriteria": [
+      "הדוח מכסה את ההיבטים המרכזיים שאתם מכירים.",
+      "המקורות קיימים, רלוונטיים ואומרים את מה שמיוחס להם."
+    ],
+    "timeBoxMinutes": 45
+  },
+  "whatToVerify": [
+    "בדקו את המקורות המקוריים, ולא רק את הדוח.",
+    "שהמקורות עדכניים ואמינים.",
+    "ההפניות למקורות מאפשרות לבדוק את התשובה, אבל אינן מבטיחות שהמסקנה נכונה."
+  ],
+  "limitations": [
+    "השתמשו במחקר מעמיק על מקורות פומביים בלבד.",
+    "הדוח עלול לכלול מידע לא מדויק או מיושן, ולהציג אותו בביטחון."
+  ],
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://support.google.com/gemini/answer/15719111",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "unknown",
+    "note": "העברית מופיעה ברשימת השפות של אפליקציית Gemini באינטרנט (נבדק ב-17.11.2026), אבל לא מצאנו אישור ספציפי לעבודה בעברית במחקר מעמיק. כדאי לבדוק בעת ההתנסות.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

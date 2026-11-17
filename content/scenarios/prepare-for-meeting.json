@@ -1,0 +1,50 @@
+{
+  "id": "prepare-for-meeting",
+  "family": "understand",
+  "title": "אני מכין ישיבה ורוצה להגיע מוכן",
+  "userNeed": "יש לי ישיבה קרובה, ואני רוצה להבין את החומר ולהגיע עם שאלות טובות.",
+  "tool": "gemini",
+  "alternateTool": "gemini-notebook",
+  "whatYouGet": "דף הכנה קצר: רקע, נקודות מרכזיות, שאלות פתוחות ונושאים שכדאי להעלות.",
+  "tags": {
+    "tasks": ["prepare-meetings"],
+    "difficulties": ["too-much-material", "starting"],
+    "materials": ["several-docs", "rough-notes"],
+    "outputs": ["summary", "qa"],
+    "roles": ["management", "hq-staff"],
+    "frequency": ["often"]
+  },
+  "priority": 4,
+  "firstExperiment": {
+    "materialSuggestion": "חומר ציבורי בנושא שאתם מכירים, או סדר יום וחומר רקע מדומים שהכנתם.",
+    "steps": [
+      "צרפו את חומרי הרקע ל-Gemini, או הוסיפו אותם כמקורות למחברת ב-Gemini Notebook.",
+      "בקשו דף הכנה: רקע, נקודות עיקריות ושלוש שאלות שכדאי לשאול.",
+      "סמנו מה מתוך הדף הייתם באמת לוקחים לישיבה."
+    ],
+    "successCriteria": [
+      "הדף עוזר לכם להבין את החומר מהר יותר מקריאה לבד.",
+      "לפחות שאלה אחת מוסיפה זווית שלא חשבתם עליה."
+    ],
+    "timeBoxMinutes": 25
+  },
+  "whatToVerify": ["שהרקע בדף נשען על החומר שצירפתם ולא על הנחות כלליות.", "ששמות, תאריכים ומספרים נכונים."],
+  "limitations": [
+    "הכלי לא יודע מה ההקשר של הישיבה ומי משתתף בה, אלא אם תתארו זאת. בשלב ההתנסות תארו זאת בלי מידע ארגוני.",
+    "אם בוחרים ב-Gemini Notebook: מקורות שמייבאים מ-Drive מועתקים למחברת. לפני שמוסיפים חומר, פעלו לפי הנחיות הארגון בנוגע למידע מוגן."
+  ],
+  "demoId": "demo-manager-brief",
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://support.google.com/gemini/answer/14903178",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "listed",
+    "note": "לפי דף העזרה של Google על אפליקציית Gemini באינטרנט (נבדק ב-17.11.2026), העברית מופיעה ברשימת השפות הנתמכות. איכות התוצר בעברית במשימה הזו לא נבדקה, וכדאי לבדוק אותה בעת ההתנסות.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "feedback-on-draft",
+  "family": "write",
+  "title": "אני רוצה משוב על טיוטה לפני שאני שולח אותה",
+  "userNeed": "כתבתי טיוטה ואני רוצה הערות על הבהירות, המבנה והטון לפני שאני שולח אותה.",
+  "tool": "gemini",
+  "whatYouGet": "רשימת הערות על הטיוטה: מה לא ברור, מה חסר ואיפה כדאי לשנות טון או מבנה, ואם תבקשו, גם הצעת ניסוח.",
+  "tags": {
+    "tasks": ["write"],
+    "difficulties": ["checking", "wording"],
+    "materials": ["single-doc"],
+    "outputs": ["checklist", "draft"],
+    "roles": ["hq-staff", "management", "service"],
+    "frequency": ["often"]
+  },
+  "priority": 3,
+  "firstExperiment": {
+    "materialSuggestion": "טיוטה מדומה שכתבתם לצורך הניסיון, או טקסט ציבורי שפורסם. לא טיוטה אמיתית של הארגון.",
+    "steps": [
+      "כתבו טיוטה מדומה קצרה, למשל הודעה על אירוע דמיוני, או בחרו טקסט ציבורי.",
+      "הדביקו אותה ב-Gemini ובקשו הערות על בהירות, מבנה וטון, בלי לשכתב.",
+      "החליטו אילו הערות לקבל, ותקנו בעצמכם."
+    ],
+    "successCriteria": ["לפחות הערה אחת עוזרת לשפר את הטקסט.", "ההערות ספציפיות ולא כלליות."],
+    "timeBoxMinutes": 15
+  },
+  "whatToVerify": ["שהצעות התיקון לא שינו את המשמעות.", "שההערות מתאימות לכללי הכתיבה בארגון."],
+  "limitations": [
+    "בשלב ההתנסות עבדו בחומר מדומה או פומבי בלבד.",
+    "הכלי לא מכיר את ההקשר, את הקהל ואת הרקע של הנושא, ולכן חלק מההערות לא יתאימו."
+  ],
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://support.google.com/gemini/answer/13275745",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "listed",
+    "note": "לפי דף העזרה של Google על אפליקציית Gemini באינטרנט (נבדק ב-17.11.2026), העברית מופיעה ברשימת השפות הנתמכות. איכות התוצר בעברית במשימה הזו לא נבדקה, וכדאי לבדוק אותה בעת ההתנסות.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

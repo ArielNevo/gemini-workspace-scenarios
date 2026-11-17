@@ -1,0 +1,50 @@
+{
+  "id": "what-changed-in-procedure",
+  "family": "compare",
+  "title": "אני צריך להבין מה השתנה בנוהל",
+  "userNeed": "יצאה גרסה חדשה של נוהל, ואני צריך להבין מה השתנה לעומת הגרסה הקודמת.",
+  "tool": "gemini-notebook",
+  "whatYouGet": "טבלת שינויים בין שתי הגרסאות: מה נוסף, מה הוסר ומה שונה, עם הפניות לסעיפים.",
+  "tags": {
+    "tasks": ["compare", "read-documents"],
+    "difficulties": ["comparing", "checking"],
+    "materials": ["several-docs"],
+    "outputs": ["change-table"],
+    "roles": ["operations", "legal", "service"],
+    "frequency": ["sometimes"]
+  },
+  "priority": 5,
+  "firstExperiment": {
+    "materialSuggestion": "שתי גרסאות של נוהל ציבורי שפורסמו באינטרנט, או שתי גרסאות של נוהל מדומה שהכנתם ושיניתם בהן כמה פרטים ידועים.",
+    "steps": [
+      "הוסיפו למחברת את שתי הגרסאות כמקורות נפרדים, עם שמות ברורים (ישנה וחדשה).",
+      "בקשו טבלה: סעיף, מה היה, מה נקבע עכשיו וסוג השינוי.",
+      "בדקו כל שינוי מול שתי הגרסאות, וחפשו שינוי שהכלי לא ציין."
+    ],
+    "successCriteria": ["כל השינויים שאתם יודעים עליהם מופיעים בטבלה.", "אין בטבלה שינויים שלא קרו."],
+    "timeBoxMinutes": 30
+  },
+  "whatToVerify": [
+    "כל שורה בטבלה, מול הסעיף המקורי בשתי הגרסאות.",
+    "שינויים קטנים בניסוח שמשנים משמעות, כמו 'רשאי' לעומת 'חייב'.",
+    "ההפניות למקורות מאפשרות לבדוק את התשובה, אבל אינן מבטיחות שהמסקנה נכונה."
+  ],
+  "limitations": [
+    "מקורות שמייבאים מ-Drive מועתקים למחברת. לפני שמוסיפים חומר, פעלו לפי הנחיות הארגון בנוגע למידע מוגן.",
+    "כלי יכול להחמיץ שינוי מהותי, במיוחד שינוי של מילה אחת או סעיף שהועבר למקום אחר. הטבלה אינה מחליפה בדיקה מול המקור."
+  ],
+  "demoId": "demo-compare-procedures",
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://knowledge.workspace.google.com/admin/generative-ai/notebooklm",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "unknown",
+    "note": "לפי דף Google על Gemini Notebook (נבדק ב-17.11.2026), הכלי תומך ביותר מ-80 שפות, אבל הדף אינו מפרט אותן ולא מצאנו בו אזכור מפורש של עברית. כדאי לבדוק את העבודה בעברית בעת ההתנסות.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

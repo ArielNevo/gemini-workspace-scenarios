@@ -1,0 +1,49 @@
+{
+  "id": "map-issues-across-documents",
+  "family": "understand",
+  "title": "אני רוצה למפות סוגיות בכמה מסמכים מקצועיים",
+  "userNeed": "אני צריך לזהות אילו סוגיות עולות בכמה מסמכים מקצועיים ואיך כל מסמך מתייחס אליהן.",
+  "tool": "gemini-notebook",
+  "whatYouGet": "מפה של הסוגיות המרכזיות, עם ציון המסמכים שבהם מופיעה כל סוגיה והפניות לקטעים הרלוונטיים.",
+  "tags": {
+    "tasks": ["read-documents", "compare"],
+    "difficulties": ["too-much-material", "comparing"],
+    "materials": ["several-docs"],
+    "outputs": ["summary", "change-table"],
+    "roles": ["legal", "hq-staff"],
+    "frequency": ["sometimes"]
+  },
+  "priority": 3,
+  "firstExperiment": {
+    "materialSuggestion": "כמה מסמכים ציבוריים בנושא אחד, למשל ניירות עמדה או דוחות שפורסמו באינטרנט.",
+    "steps": [
+      "צרו מחברת חדשה ב-Gemini Notebook והוסיפו אליה את המסמכים הציבוריים כמקורות.",
+      "בקשו טבלה: סוגיה, באילו מסמכים היא מופיעה, ומה עמדת כל מסמך.",
+      "בדקו שתי סוגיות לעומק מול המקורות."
+    ],
+    "successCriteria": ["הסוגיות שזוהו הן אלה שהייתם מזהים בעצמכם.", "ההפניות מובילות לקטעים הנכונים."],
+    "timeBoxMinutes": 40
+  },
+  "whatToVerify": [
+    "שהכלי לא ייחס למסמך עמדה שאין בו.",
+    "שסוגיה שמנוסחת אחרת במסמכים שונים זוהתה כאותה סוגיה.",
+    "ההפניות למקורות מאפשרות לבדוק את התשובה, אבל אינן מבטיחות שהמסקנה נכונה."
+  ],
+  "limitations": [
+    "מקורות שמייבאים מ-Drive מועתקים למחברת. לפני שמוסיפים חומר, פעלו לפי הנחיות הארגון בנוגע למידע מוגן.",
+    "מיפוי כזה הוא נקודת פתיחה, ואינו מחליף ניתוח מקצועי."
+  ],
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://knowledge.workspace.google.com/admin/generative-ai/notebooklm",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "unknown",
+    "note": "לפי דף Google על Gemini Notebook (נבדק ב-17.11.2026), הכלי תומך ביותר מ-80 שפות, אבל הדף אינו מפרט אותן ולא מצאנו בו אזכור מפורש של עברית. כדאי לבדוק את העבודה בעברית בעת ההתנסות.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

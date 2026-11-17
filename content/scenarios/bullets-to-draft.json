@@ -1,0 +1,52 @@
+{
+  "id": "bullets-to-draft",
+  "family": "write",
+  "title": "יש לי נקודות, אבל קשה לי להתחיל מסמך",
+  "userNeed": "יש לי נקודות עיקריות, ואני מתקשה להפוך אותן למסמך כתוב.",
+  "tool": "gemini",
+  "whatYouGet": "טיוטה ראשונה של מסמך, מכתב או הודעה, שבנויה מהנקודות שלכם ומותאמת לקהל ולאורך שתבחרו.",
+  "tags": {
+    "tasks": ["write"],
+    "difficulties": ["starting", "wording"],
+    "materials": ["rough-notes"],
+    "outputs": ["draft"],
+    "roles": ["hq-staff", "management", "service"],
+    "frequency": ["often"]
+  },
+  "priority": 5,
+  "firstExperiment": {
+    "materialSuggestion": "נקודות מדומות שהכנתם על נושא כללי, למשל הודעה על שינוי בשעות קבלת קהל במשרד דמיוני.",
+    "steps": [
+      "כתבו ל-Gemini את הנקודות, את הקהל ואת האורך הרצוי.",
+      "בקשו שתי גרסאות: אחת רשמית ואחת קצרה ופשוטה.",
+      "בחרו גרסה וערכו אותה בעצמכם."
+    ],
+    "successCriteria": [
+      "הטיוטה כוללת את כל הנקודות ולא מוסיפה עובדות חדשות.",
+      "קל יותר לערוך את הטיוטה מאשר לכתוב מאפס."
+    ],
+    "timeBoxMinutes": 20
+  },
+  "whatToVerify": [
+    "שלא נוספו לטיוטה עובדות, התחייבויות או תאריכים שלא היו בנקודות.",
+    "שהטון מתאים לקהל ולכללי הכתיבה בארגון."
+  ],
+  "limitations": [
+    "הטיוטה טובה כמו הנקודות שנתתם. הכלי לא יודע מה חסר בהן.",
+    "הכלי עלול לנסח בביטחון דברים שלא התכוונתם לומר."
+  ],
+  "demoId": "demo-bullets-to-draft",
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://support.google.com/gemini/answer/13275745",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "listed",
+    "note": "לפי דף העזרה של Google על אפליקציית Gemini באינטרנט (נבדק ב-17.11.2026), העברית מופיעה ברשימת השפות הנתמכות. איכות התוצר בעברית במשימה הזו לא נבדקה, וכדאי לבדוק אותה בעת ההתנסות.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

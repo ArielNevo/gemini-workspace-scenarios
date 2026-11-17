@@ -1,0 +1,52 @@
+{
+  "id": "listen-to-material",
+  "family": "understand",
+  "title": "אין לי זמן לקרוא ואני רוצה להבין את העיקר בהאזנה",
+  "userNeed": "אין לי זמן לשבת ולקרוא, ואני רוצה להבין את עיקר החומר בהאזנה.",
+  "tool": "gemini-notebook",
+  "whatYouGet": "סקירה קולית בסגנון שיחה, שמציגה את הנושאים המרכזיים במקורות שבמחברת.",
+  "tags": {
+    "tasks": ["read-documents", "learn-teach"],
+    "difficulties": ["too-much-material"],
+    "materials": ["single-doc", "several-docs"],
+    "outputs": ["summary", "learning-pack"],
+    "roles": ["operations", "management"],
+    "frequency": ["sometimes"]
+  },
+  "priority": 3,
+  "firstExperiment": {
+    "materialSuggestion": "מסמך ציבורי שאתם מכירים היטב, כדי שתוכלו לשפוט מה הסקירה הדגישה ומה השמיטה.",
+    "steps": [
+      "צרו מחברת חדשה ב-Gemini Notebook והוסיפו אליה את המסמך הציבורי כמקור.",
+      "צרו סקירה קולית והאזינו לה.",
+      "קראו את הסעיפים העיקריים במסמך ובדקו מה הסקירה הדגישה ומה השמיטה."
+    ],
+    "successCriteria": [
+      "הסקירה מעבירה את העיקר בלי טעויות מהותיות.",
+      "אחרי ההאזנה קל יותר לדעת אילו חלקים לקרוא לעומק."
+    ],
+    "timeBoxMinutes": 30
+  },
+  "whatToVerify": [
+    "שאין בסקירה טענות שלא מופיעות במקור.",
+    "שהסקירה לא פישטה יתר על המידה נושא שבו הניסוח המדויק חשוב."
+  ],
+  "limitations": [
+    "מקורות שמייבאים מ-Drive מועתקים למחברת. לפני שמוסיפים חומר, פעלו לפי הנחיות הארגון בנוגע למידע מוגן.",
+    "האזנה אינה מחליפה קריאה במקום שבו הדיוק חשוב, למשל בתנאים, במספרים ובניסוח מחייב.",
+    "יש לוודא שהיכולת זמינה בחבילה שתוקצה."
+  ],
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://knowledge.workspace.google.com/admin/generative-ai/notebooklm",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "unknown",
+    "note": "סקירות קוליות בעברית הוכרזו באפריל 2025, אבל לא מצאנו לכך אישור ברשימת שפות רשמית. יש לוודא זאת בעת ההתנסות, ולוודא שהיכולת זמינה בחבילה שתוקצה.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

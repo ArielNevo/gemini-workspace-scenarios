@@ -1,0 +1,53 @@
+{
+  "id": "find-answer-in-procedures",
+  "family": "understand",
+  "title": "קשה לי למצוא תשובה בתוך נהלים",
+  "userNeed": "אני צריך למצוא במהירות תשובה לשאלה מעשית בתוך נהלים ארוכים.",
+  "tool": "gemini-notebook",
+  "whatYouGet": "תשובה לשאלה שלכם, עם הפניה לסעיף בנוהל שעליו היא מבוססת.",
+  "tags": {
+    "tasks": ["read-documents"],
+    "difficulties": ["finding-info", "too-much-material"],
+    "materials": ["single-doc", "several-docs"],
+    "outputs": ["qa"],
+    "roles": ["service", "operations", "hq-staff"],
+    "frequency": ["often"]
+  },
+  "priority": 5,
+  "firstExperiment": {
+    "materialSuggestion": "נוהל ציבורי שפורסם באינטרנט ואתם מכירים היטב, כדי שתוכלו לשפוט את התשובות.",
+    "steps": [
+      "צרו מחברת חדשה ב-Gemini Notebook והוסיפו אליה את המסמך הציבורי כמקור.",
+      "שאלו שלוש שאלות שאתם כבר יודעים את התשובה עליהן.",
+      "השוו כל תשובה לסעיף שאליו היא מפנה."
+    ],
+    "successCriteria": [
+      "התשובות נכונות ומפנות לסעיף הנכון.",
+      "כשהתשובה לא נמצאת בנוהל, הכלי אומר זאת ולא ממציא תשובה."
+    ],
+    "timeBoxMinutes": 20
+  },
+  "whatToVerify": [
+    "שהסעיף שאליו מפנה התשובה אכן אומר את מה שנכתב בתשובה.",
+    "שהנוהל שבמחברת הוא הגרסה העדכנית.",
+    "ההפניות למקורות מאפשרות לבדוק את התשובה, אבל אינן מבטיחות שהמסקנה נכונה."
+  ],
+  "limitations": [
+    "מקורות שמייבאים מ-Drive מועתקים למחברת. לפני שמוסיפים חומר, פעלו לפי הנחיות הארגון בנוגע למידע מוגן.",
+    "הכלי עונה לפי המקורות שבמחברת בלבד. אם הנוהל השתנה, צריך לעדכן את המקור."
+  ],
+  "demoId": "demo-ask-the-procedure",
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://knowledge.workspace.google.com/admin/generative-ai/notebooklm",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "unknown",
+    "note": "לפי דף Google על Gemini Notebook (נבדק ב-17.11.2026), הכלי תומך ביותר מ-80 שפות, אבל הדף אינו מפרט אותן ולא מצאנו בו אזכור מפורש של עברית. כדאי לבדוק את העבודה בעברית בעת ההתנסות.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

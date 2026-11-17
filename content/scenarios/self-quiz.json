@@ -1,0 +1,49 @@
+{
+  "id": "self-quiz",
+  "family": "learn",
+  "title": "אני רוצה לבחון את עצמי או את הצוות על חומר",
+  "userNeed": "אני רוצה לבדוק אם אני או הצוות שולטים בחומר מסוים.",
+  "tool": "gemini-notebook",
+  "whatYouGet": "שאלות בחירה או כרטיסיות לתרגול, שנבנו מהמקורות שבמחברת.",
+  "tags": {
+    "tasks": ["learn-teach"],
+    "difficulties": ["checking"],
+    "materials": ["single-doc", "several-docs"],
+    "outputs": ["learning-pack", "qa"],
+    "roles": ["operations", "service"],
+    "frequency": ["sometimes"]
+  },
+  "priority": 3,
+  "firstExperiment": {
+    "materialSuggestion": "מסמך ציבורי שאתם מכירים היטב, או חומר מדומה שהכנתם.",
+    "steps": [
+      "צרו מחברת והוסיפו אליה את החומר כמקור.",
+      "צרו בוחן או כרטיסיות על החומר.",
+      "ענו על השאלות, ובדקו מול המקור כל תשובה שנראית לכם שגויה."
+    ],
+    "successCriteria": ["השאלות נכונות ומכסות את עיקר החומר.", "הבוחן עוזר לזהות מה עוד לא ברור."],
+    "timeBoxMinutes": 25
+  },
+  "whatToVerify": [
+    "שהתשובה שמסומנת כנכונה אכן נכונה לפי המקור.",
+    "שהשאלות מכסות את החלקים החשובים, ולא רק פרטים שוליים."
+  ],
+  "limitations": [
+    "מקורות שמייבאים מ-Drive מועתקים למחברת. לפני שמוסיפים חומר, פעלו לפי הנחיות הארגון בנוגע למידע מוגן.",
+    "בוחן שנוצר בכלי אינו מבחן מוסמך, ושאלה שגויה אחת יכולה ללמד דבר לא נכון."
+  ],
+  "demoId": "demo-learn-a-field",
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://knowledge.workspace.google.com/admin/generative-ai/notebooklm",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "unknown",
+    "note": "לפי דף Google על Gemini Notebook (נבדק ב-17.11.2026), הכלי תומך ביותר מ-80 שפות, אבל הדף אינו מפרט אותן ולא מצאנו בו אזכור מפורש של עברית. כדאי לבדוק את העבודה בעברית בעת ההתנסות.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

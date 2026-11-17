@@ -1,0 +1,53 @@
+{
+  "id": "compare-two-positions",
+  "family": "compare",
+  "title": "אני צריך להשוות בין שתי טיוטות או עמדות",
+  "userNeed": "יש לפניי שתי טיוטות או שתי עמדות, ואני צריך לראות במה הן מסכימות ובמה הן חלוקות.",
+  "tool": "gemini-notebook",
+  "whatYouGet": "טבלת השוואה לפי נושאים: עמדת כל צד, נקודות הסכמה ונקודות מחלוקת, עם הפניות למקורות.",
+  "tags": {
+    "tasks": ["compare"],
+    "difficulties": ["comparing"],
+    "materials": ["several-docs"],
+    "outputs": ["change-table", "summary"],
+    "roles": ["legal", "management", "hq-staff"],
+    "frequency": ["sometimes"]
+  },
+  "priority": 4,
+  "firstExperiment": {
+    "materialSuggestion": "שני מסמכי עמדה ציבוריים בנושא אחד, או שתי טיוטות מדומות שהכנתם.",
+    "steps": [
+      "הוסיפו למחברת את שני המסמכים כמקורות נפרדים.",
+      "בקשו טבלה לפי נושאים: מה אומר כל מסמך, והאם יש הסכמה או מחלוקת.",
+      "בדקו שני נושאים לעומק מול המקורות."
+    ],
+    "successCriteria": [
+      "הטבלה מציגה את שני הצדדים בלי לעוות אותם.",
+      "נקודות המחלוקת המרכזיות מופיעות בטבלה."
+    ],
+    "timeBoxMinutes": 30
+  },
+  "whatToVerify": [
+    "שעמדה לא יוחסה לצד הלא נכון.",
+    "שהניסוח בטבלה לא מחזק או מחליש את עמדתו של אחד הצדדים.",
+    "ההפניות למקורות מאפשרות לבדוק את התשובה, אבל אינן מבטיחות שהמסקנה נכונה."
+  ],
+  "limitations": [
+    "מקורות שמייבאים מ-Drive מועתקים למחברת. לפני שמוסיפים חומר, פעלו לפי הנחיות הארגון בנוגע למידע מוגן.",
+    "ההשוואה נשענת על הטקסט בלבד, ואינה מביאה בחשבון הקשר שלא כתוב במסמכים."
+  ],
+  "demoId": "demo-compare-procedures",
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://knowledge.workspace.google.com/admin/generative-ai/notebooklm",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "unknown",
+    "note": "לפי דף Google על Gemini Notebook (נבדק ב-17.11.2026), הכלי תומך ביותר מ-80 שפות, אבל הדף אינו מפרט אותן ולא מצאנו בו אזכור מפורש של עברית. כדאי לבדוק את העבודה בעברית בעת ההתנסות.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

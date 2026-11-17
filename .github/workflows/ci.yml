@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Lint and format
+        run: npm run lint
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Validate content
+        run: npm run content:validate
+      - name: Content lint (public-repo safety)
+        run: npm run content:lint
+        env:
+          # Comma-separated internal terms that must never appear. Set as a repository secret; never in code.
+          CONTENT_FORBIDDEN_TERMS: ${{ secrets.CONTENT_FORBIDDEN_TERMS }}
+      - name: Unit tests
+        run: npm test
+      - name: Build
+        run: npm run build
+      - name: Bundle check (no Firebase with flag off, size budget)
+        run: npm run check:bundle
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+      - name: E2E and accessibility
+        run: npm run test:e2e
+      - uses: actions/upload-artifact@v7
+        if: failure()
+        with:
+          name: playwright-report
+          path: playwright-report
+          retention-days: 7

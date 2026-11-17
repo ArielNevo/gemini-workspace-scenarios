@@ -1,0 +1,45 @@
+{
+  "id": "onboarding-pack",
+  "family": "learn",
+  "title": "אני צריך חבילת קליטה לעובד חדש",
+  "userNeed": "מגיע עובד חדש, ואני רוצה לרכז בשבילו את מה שצריך לדעת בהתחלה.",
+  "tool": "gemini-notebook",
+  "whatYouGet": "טיוטה של חבילת קליטה: סקירה של התחום, מושגים, שאלות נפוצות ורשימת דברים לשבוע הראשון.",
+  "tags": {
+    "tasks": ["learn-teach"],
+    "difficulties": ["starting", "too-much-material"],
+    "materials": ["several-docs"],
+    "outputs": ["learning-pack", "checklist"],
+    "roles": ["management", "operations"],
+    "frequency": ["sometimes"]
+  },
+  "priority": 3,
+  "firstExperiment": {
+    "materialSuggestion": "חומרים ציבוריים על התחום, או מסמכי קליטה מדומים שהכנתם.",
+    "steps": [
+      "צרו מחברת והוסיפו אליה את החומרים כמקורות.",
+      "בקשו חבילת קליטה: סקירה קצרה, עשרה מושגים, חמש שאלות נפוצות ורשימה לשבוע הראשון.",
+      "סמנו בעצמכם, או עם עובד ותיק, מה חסר ומה מיותר."
+    ],
+    "successCriteria": ["החבילה מכסה את מה שעובד חדש צריך לדעת בהתחלה.", "אין בה מידע שגוי לפי המקורות."],
+    "timeBoxMinutes": 45
+  },
+  "whatToVerify": ["שהמידע תואם את הנהלים העדכניים.", "שהחבילה מתאימה לתפקיד הספציפי ואינה כללית מדי."],
+  "limitations": [
+    "מקורות שמייבאים מ-Drive מועתקים למחברת. לפני שמוסיפים חומר, פעלו לפי הנחיות הארגון בנוגע למידע מוגן.",
+    "חבילה כזו אינה מחליפה חפיפה אישית ושיחה עם הצוות."
+  ],
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://knowledge.workspace.google.com/admin/generative-ai/notebooklm",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "unknown",
+    "note": "לפי דף Google על Gemini Notebook (נבדק ב-17.11.2026), הכלי תומך ביותר מ-80 שפות, אבל הדף אינו מפרט אותן ולא מצאנו בו אזכור מפורש של עברית. כדאי לבדוק את העבודה בעברית בעת ההתנסות.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

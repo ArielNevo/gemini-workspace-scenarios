@@ -1,0 +1,43 @@
+{
+  "id": "outline-for-presentation",
+  "family": "write",
+  "title": "אני צריך שלד למצגת או לתוכנית עבודה",
+  "userNeed": "אני צריך לבנות מצגת או תוכנית עבודה, ולא ברור לי מאיפה להתחיל.",
+  "tool": "gemini",
+  "whatYouGet": "שלד מסודר: חלקים, כותרות ונקודות לכל חלק, שאפשר להמשיך לפתח.",
+  "tags": {
+    "tasks": ["write", "prepare-meetings"],
+    "difficulties": ["starting"],
+    "materials": ["rough-notes", "none-yet"],
+    "outputs": ["draft"],
+    "roles": ["management", "hq-staff"],
+    "frequency": ["sometimes"]
+  },
+  "priority": 4,
+  "firstExperiment": {
+    "materialSuggestion": "נושא כללי שאתם מכירים, או נקודות מדומות שהכנתם.",
+    "steps": [
+      "תארו ל-Gemini את מטרת המצגת או התוכנית, את הקהל ואת משך הזמן.",
+      "בקשו שלד של חמישה עד שמונה חלקים, עם שתי נקודות לכל חלק.",
+      "בקשו לשנות את הסדר או להוסיף חלק שחסר לכם."
+    ],
+    "successCriteria": ["השלד נותן נקודת פתיחה שאפשר לעבוד ממנה.", "החלקים מסודרים בסדר הגיוני לקהל."],
+    "timeBoxMinutes": 20
+  },
+  "whatToVerify": ["שהשלד מתאים למטרה, ולא רק נראה מסודר.", "עובדות או נתונים שהכלי הוסיף לשלד."],
+  "limitations": ["השלד כללי. התוכן המקצועי והעדיפויות נקבעים בידיכם."],
+  "demoId": "demo-bullets-to-draft",
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://support.google.com/gemini/answer/13275745",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "listed",
+    "note": "לפי דף העזרה של Google על אפליקציית Gemini באינטרנט (נבדק ב-17.11.2026), העברית מופיעה ברשימת השפות הנתמכות. איכות התוצר בעברית במשימה הזו לא נבדקה, וכדאי לבדוק אותה בעת ההתנסות.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

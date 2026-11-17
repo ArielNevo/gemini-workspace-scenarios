@@ -1,0 +1,64 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    # GitHub Pages on the Free plan requires a public repository. Skip quietly while the repo is private.
+    if: ${{ !github.event.repository.private }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run content:validate
+      - run: npm run content:lint
+        env:
+          CONTENT_FORBIDDEN_TERMS: ${{ secrets.CONTENT_FORBIDDEN_TERMS }}
+      - name: Build
+        run: npm run build
+        env:
+          # Project site: https://<user>.github.io/<repo>/ . Set PAGES_BASE_PATH=/ for a custom domain root.
+          VITE_BASE_PATH: ${{ vars.PAGES_BASE_PATH || format('/{0}/', github.event.repository.name) }}
+          VITE_ENABLE_AI_ASSIST: ${{ vars.VITE_ENABLE_AI_ASSIST || 'false' }}
+          VITE_GEMINI_MODEL: ${{ vars.VITE_GEMINI_MODEL }}
+          VITE_FIREBASE_API_KEY: ${{ vars.VITE_FIREBASE_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN: ${{ vars.VITE_FIREBASE_AUTH_DOMAIN }}
+          VITE_FIREBASE_PROJECT_ID: ${{ vars.VITE_FIREBASE_PROJECT_ID }}
+          VITE_FIREBASE_APP_ID: ${{ vars.VITE_FIREBASE_APP_ID }}
+          VITE_RECAPTCHA_ENTERPRISE_SITE_KEY: ${{ vars.VITE_RECAPTCHA_ENTERPRISE_SITE_KEY }}
+          VITE_CSP_EXTRA_CONNECT: ${{ vars.VITE_CSP_EXTRA_CONNECT }}
+          VITE_CSP_EXTRA_SCRIPT: ${{ vars.VITE_CSP_EXTRA_SCRIPT }}
+          VITE_CSP_EXTRA_FRAME: ${{ vars.VITE_CSP_EXTRA_FRAME }}
+      - run: npm run check:bundle
+        env:
+          VITE_ENABLE_AI_ASSIST: ${{ vars.VITE_ENABLE_AI_ASSIST || 'false' }}
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

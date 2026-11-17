@@ -1,0 +1,46 @@
+{
+  "id": "rewrite-for-audience",
+  "family": "write",
+  "title": "אני צריך לנסח מחדש את אותו תוכן לקהל אחר",
+  "userNeed": "יש לי תוכן כתוב, ואני צריך להתאים אותו לקהל אחר, למשל מהנהלה לצוות או מצוות לציבור.",
+  "tool": "gemini",
+  "whatYouGet": "כמה גרסאות של אותו תוכן, כל אחת בטון, באורך ובמידת פירוט שמתאימים לקהל אחר.",
+  "tags": {
+    "tasks": ["write"],
+    "difficulties": ["wording"],
+    "materials": ["single-doc"],
+    "outputs": ["draft"],
+    "roles": ["management", "hq-staff", "service"],
+    "frequency": ["sometimes"]
+  },
+  "priority": 4,
+  "firstExperiment": {
+    "materialSuggestion": "טקסט ציבורי שאתם מכירים, או טקסט מדומה שהכנתם.",
+    "steps": [
+      "הדביקו את הטקסט ב-Gemini וציינו את הקהל המקורי ואת הקהל החדש.",
+      "בקשו שתי גרסאות לשני קהלים שונים.",
+      "בדקו שבכל גרסה נשמרו העובדות המרכזיות."
+    ],
+    "successCriteria": ["כל גרסה מתאימה לקהל שלה.", "העובדות זהות בכל הגרסאות."],
+    "timeBoxMinutes": 20
+  },
+  "whatToVerify": [
+    "שלא השתנו או נעלמו עובדות במעבר בין הגרסאות.",
+    "שהטון מתאים לקהל, ואינו מתנשא או רשמי מדי."
+  ],
+  "limitations": ["הכלי אינו מכיר את הקהל שלכם. ההתאמה נשענת על התיאור שתתנו."],
+  "demoId": "demo-plain-language",
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://support.google.com/gemini/answer/13275745",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "listed",
+    "note": "לפי דף העזרה של Google על אפליקציית Gemini באינטרנט (נבדק ב-17.11.2026), העברית מופיעה ברשימת השפות הנתמכות. איכות התוצר בעברית במשימה הזו לא נבדקה, וכדאי לבדוק אותה בעת ההתנסות.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

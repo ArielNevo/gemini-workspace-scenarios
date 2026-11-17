@@ -1,0 +1,24 @@
+{
+  "siteTitle": "גלו איפה Gemini יכול לעזור בעבודה שלכם",
+  "orgDisplayName": "",
+  "logoPath": "",
+  "disclaimer": "אתר ניסיוני להכרת תרחישי שימוש. אינו מחליף את הנחיות הארגון.",
+  "robots": "noindex,nofollow",
+  "catalogUpdatedOn": "2026-11-17",
+  "requestAccess": {
+    "mode": "none",
+    "url": "",
+    "mailto": "",
+    "subject": "בקשה להתנסות ב-Gemini",
+    "prefill": { "param": "", "maxChars": 1500 }
+  },
+  "feedbackUrl": "",
+  "orgGuidelinesUrl": "",
+  "nationalGuideUrl": "https://www.gov.il/BlobFolder/news/ai-guide/he/DL-57390%20AI%20Responsible%20Use%20Manual-hebrew.pdf",
+  "recommend": {
+    "weights": { "tasks": 3, "outputs": 2, "materials": 2, "difficulties": 2, "roles": 1, "frequency": 0.5 },
+    "threshold": 5,
+    "diversityGap": 2,
+    "maxResults": 3
+  }
+}

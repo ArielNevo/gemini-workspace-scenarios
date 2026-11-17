@@ -1,0 +1,51 @@
+{
+  "id": "requirements-to-checklist",
+  "family": "compare",
+  "title": "אני צריך להפוך דרישות ממסמך לרשימת בדיקה",
+  "userNeed": "יש לי מסמך עם דרישות, ואני צריך רשימת בדיקה מעשית שאפשר לעבוד לפיה.",
+  "tool": "gemini",
+  "whatYouGet": "רשימת בדיקה שבה כל דרישה מנוסחת כפריט שאפשר לסמן, עם ציון הסעיף שממנו נלקחה.",
+  "tags": {
+    "tasks": ["read-documents"],
+    "difficulties": ["checking", "finding-info"],
+    "materials": ["single-doc"],
+    "outputs": ["checklist"],
+    "roles": ["operations", "service", "hq-staff"],
+    "frequency": ["sometimes"]
+  },
+  "priority": 4,
+  "firstExperiment": {
+    "materialSuggestion": "מסמך דרישות ציבורי, כמו מפרט או הנחיות שפורסמו באינטרנט.",
+    "steps": [
+      "צרפו את המסמך ל-Gemini.",
+      "בקשו רשימת בדיקה: פריט אחד לכל דרישה, עם מספר הסעיף.",
+      "עברו על המסמך וסמנו דרישות שלא נכנסו לרשימה."
+    ],
+    "successCriteria": [
+      "כל דרישה במסמך מופיעה ברשימה.",
+      "הפריטים ברורים מספיק כדי לסמן 'בוצע' או 'לא בוצע'."
+    ],
+    "timeBoxMinutes": 25
+  },
+  "whatToVerify": [
+    "שלא הושמטו דרישות, במיוחד כאלה שמופיעות בהערות או בנספחים.",
+    "שהניסוח ברשימה לא ריכך או החמיר דרישה."
+  ],
+  "limitations": [
+    "הכלי עלול לפצל דרישה אחת לכמה פריטים, או לאחד כמה דרישות לפריט אחד.",
+    "רשימת הבדיקה היא כלי עזר. האחריות לעמידה בדרישות נשארת אצלכם."
+  ],
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://support.google.com/gemini/answer/14903178",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "listed",
+    "note": "לפי דף העזרה של Google על אפליקציית Gemini באינטרנט (נבדק ב-17.11.2026), העברית מופיעה ברשימת השפות הנתמכות. איכות התוצר בעברית במשימה הזו לא נבדקה, וכדאי לבדוק אותה בעת ההתנסות.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

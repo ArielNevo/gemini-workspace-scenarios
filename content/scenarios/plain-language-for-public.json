@@ -1,0 +1,43 @@
+{
+  "id": "plain-language-for-public",
+  "family": "write",
+  "title": "אני צריך להסביר מידע מקצועי בשפה פשוטה לציבור",
+  "userNeed": "אני צריך להסביר לציבור מידע מקצועי בשפה פשוטה, בלי לשנות את המשמעות.",
+  "tool": "gemini",
+  "whatYouGet": "גרסה בשפה פשוטה של טקסט מקצועי, במשפטים קצרים ובמילים יומיומיות.",
+  "tags": {
+    "tasks": ["write"],
+    "difficulties": ["wording"],
+    "materials": ["single-doc"],
+    "outputs": ["draft"],
+    "roles": ["service"],
+    "frequency": ["often"]
+  },
+  "priority": 5,
+  "firstExperiment": {
+    "materialSuggestion": "טקסט מקצועי ציבורי שאתם מכירים, כמו הסבר על זכאות שמופיע באתר ממשלתי.",
+    "steps": [
+      "הדביקו את הטקסט ב-Gemini ובקשו גרסה בשפה פשוטה לקהל רחב.",
+      "בקשו גם גרסה קצרה של שלושה משפטים.",
+      "השוו משפט אחר משפט למקור ובדקו שהמשמעות לא השתנתה."
+    ],
+    "successCriteria": ["הגרסה הפשוטה נכונה ומובנת למי שאינו מומחה.", "תנאים וחריגים חשובים לא נעלמו."],
+    "timeBoxMinutes": 20
+  },
+  "whatToVerify": ["שהפישוט לא שינה תנאי, מועד או זכאות.", "שהטקסט עומד בכללי הכתיבה לציבור שנהוגים בארגון."],
+  "limitations": ["פישוט עלול להשמיט סייג חשוב. טקסט לציבור צריך בדיקה של בעל מקצוע לפני פרסום."],
+  "demoId": "demo-plain-language",
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://support.google.com/gemini/answer/13275745",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "listed",
+    "note": "לפי דף העזרה של Google על אפליקציית Gemini באינטרנט (נבדק ב-17.11.2026), העברית מופיעה ברשימת השפות הנתמכות. איכות התוצר בעברית במשימה הזו לא נבדקה, וכדאי לבדוק אותה בעת ההתנסות.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

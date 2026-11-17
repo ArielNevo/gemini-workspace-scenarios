@@ -1,0 +1,53 @@
+{
+  "id": "enter-new-field",
+  "family": "learn",
+  "title": "אני נכנס לתחום חדש",
+  "userNeed": "התחלתי לעבוד בתחום חדש, ואני צריך ללמוד את היסודות מהר.",
+  "tool": "gemini-notebook",
+  "whatYouGet": "חומר למידה שנבנה מהמקורות שבחרתם: מדריך למידה, מושגים מרכזיים ושאלות לבדיקה עצמית.",
+  "tags": {
+    "tasks": ["learn-teach", "read-documents"],
+    "difficulties": ["too-much-material", "starting"],
+    "materials": ["several-docs"],
+    "outputs": ["learning-pack", "summary"],
+    "roles": ["hq-staff", "management"],
+    "frequency": ["once"]
+  },
+  "priority": 4,
+  "firstExperiment": {
+    "materialSuggestion": "כמה מסמכים ציבוריים בסיסיים בתחום, כמו מדריכים או סקירות שפורסמו באינטרנט.",
+    "steps": [
+      "צרו מחברת והוסיפו אליה שלושה עד חמישה מקורות ציבוריים בתחום.",
+      "בקשו מדריך למידה ורשימת מושגים מרכזיים.",
+      "שאלו על מה שלא הבנתם, ובדקו את ההפניות."
+    ],
+    "successCriteria": [
+      "המדריך עוזר לכם להבין את מבנה התחום.",
+      "התשובות לשאלות שלכם מפנות לקטעים רלוונטיים."
+    ],
+    "timeBoxMinutes": 45
+  },
+  "whatToVerify": [
+    "שההסברים תואמים את המקורות.",
+    "שהמקורות שבחרתם עדכניים ומייצגים את התחום.",
+    "ההפניות למקורות מאפשרות לבדוק את התשובה, אבל אינן מבטיחות שהמסקנה נכונה."
+  ],
+  "limitations": [
+    "מקורות שמייבאים מ-Drive מועתקים למחברת. לפני שמוסיפים חומר, פעלו לפי הנחיות הארגון בנוגע למידע מוגן.",
+    "החומר נשען רק על המקורות שבחרתם. אם הם חלקיים או מיושנים, גם החומר יהיה כזה."
+  ],
+  "demoId": "demo-learn-a-field",
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://knowledge.workspace.google.com/admin/generative-ai/notebooklm",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "unknown",
+    "note": "לפי דף Google על Gemini Notebook (נבדק ב-17.11.2026), הכלי תומך ביותר מ-80 שפות, אבל הדף אינו מפרט אותן ולא מצאנו בו אזכור מפורש של עברית. כדאי לבדוק את העבודה בעברית בעת ההתנסות.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

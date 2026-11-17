@@ -1,0 +1,45 @@
+{
+  "id": "training-from-procedures",
+  "family": "learn",
+  "title": "אני מכין הדרכה לעובדים",
+  "userNeed": "אני צריך להכין הדרכה לעובדים על בסיס נהלים קיימים.",
+  "tool": "gemini-notebook",
+  "whatYouGet": "חומר בסיס להדרכה: מבנה מוצע, נקודות עיקריות לכל נושא ושאלות לתרגול, עם הפניות לנהלים.",
+  "tags": {
+    "tasks": ["learn-teach"],
+    "difficulties": ["starting", "too-much-material"],
+    "materials": ["single-doc", "several-docs"],
+    "outputs": ["learning-pack"],
+    "roles": ["operations", "service", "management"],
+    "frequency": ["sometimes"]
+  },
+  "priority": 4,
+  "firstExperiment": {
+    "materialSuggestion": "נוהל ציבורי שפורסם באינטרנט, או נוהל מדומה שהכנתם.",
+    "steps": [
+      "צרו מחברת והוסיפו אליה את הנוהל כמקור.",
+      "בקשו מבנה להדרכה של שעה: נושאים, נקודות עיקריות ושאלה לתרגול לכל נושא.",
+      "בדקו שהנקודות תואמות את הנוהל ושלא הושמט שלב חשוב."
+    ],
+    "successCriteria": ["המבנה מכסה את החלקים החשובים בנוהל.", "שאלות התרגול נכונות לפי הנוהל."],
+    "timeBoxMinutes": 40
+  },
+  "whatToVerify": ["שכל הנחיה בחומר תואמת את הנוהל העדכני.", "שהדגשים מתאימים לקהל ההדרכה."],
+  "limitations": [
+    "מקורות שמייבאים מ-Drive מועתקים למחברת. לפני שמוסיפים חומר, פעלו לפי הנחיות הארגון בנוגע למידע מוגן.",
+    "הכלי לא יודע מה העובדים כבר יודעים ואיפה הם טועים בדרך כלל. את זה מוסיפים מהניסיון שלכם."
+  ],
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://knowledge.workspace.google.com/admin/generative-ai/notebooklm",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "unknown",
+    "note": "לפי דף Google על Gemini Notebook (נבדק ב-17.11.2026), הכלי תומך ביותר מ-80 שפות, אבל הדף אינו מפרט אותן ולא מצאנו בו אזכור מפורש של עברית. כדאי לבדוק את העבודה בעברית בעת ההתנסות.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

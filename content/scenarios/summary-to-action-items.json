@@ -1,0 +1,45 @@
+{
+  "id": "summary-to-action-items",
+  "family": "write",
+  "title": "יש לי סיכום ישיבה כתוב ואני צריך להוציא ממנו משימות",
+  "userNeed": "יש לי סיכום ישיבה כתוב, ואני צריך להוציא ממנו רשימת משימות ברורה.",
+  "tool": "gemini",
+  "whatYouGet": "רשימת משימות שנגזרה מהסיכום הכתוב: מה צריך לעשות, ומי אחראי ועד מתי, אם הדבר כתוב בסיכום.",
+  "tags": {
+    "tasks": ["prepare-meetings", "write"],
+    "difficulties": ["checking"],
+    "materials": ["rough-notes", "single-doc"],
+    "outputs": ["action-list"],
+    "roles": ["management", "hq-staff"],
+    "frequency": ["often"]
+  },
+  "priority": 4,
+  "firstExperiment": {
+    "materialSuggestion": "סיכום ישיבה מדומה שכתבתם על נושא כללי, בלי שמות אמיתיים.",
+    "steps": [
+      "הדביקו את הסיכום הכתוב ב-Gemini.",
+      "בקשו טבלה: משימה, אחראי, מועד. כשפרט חסר בסיכום, בקשו שייכתב 'לא צוין'.",
+      "השוו את הרשימה לסיכום ובדקו שלא הוחמצה החלטה."
+    ],
+    "successCriteria": ["כל ההחלטות שדורשות פעולה מופיעות ברשימה.", "הכלי לא המציא אחראים או מועדים."],
+    "timeBoxMinutes": 15
+  },
+  "whatToVerify": ["שלא יוחסה משימה למי שלא קיבל אותה.", "שהחלטות שנוסחו בעקיפין בסיכום לא הוחמצו."],
+  "limitations": [
+    "התרחיש מתחיל מסיכום שכבר נכתב. הוא אינו עוסק בסיכום אוטומטי של ישיבות.",
+    "הרשימה טובה כמו הסיכום: מה שלא נכתב בו לא יופיע בה."
+  ],
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://support.google.com/gemini/answer/13275745",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "listed",
+    "note": "לפי דף העזרה של Google על אפליקציית Gemini באינטרנט (נבדק ב-17.11.2026), העברית מופיעה ברשימת השפות הנתמכות. איכות התוצר בעברית במשימה הזו לא נבדקה, וכדאי לבדוק אותה בעת ההתנסות.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

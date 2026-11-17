@@ -1,0 +1,45 @@
+{
+  "id": "text-to-table",
+  "family": "compare",
+  "title": "יש לי טקסט חופשי ואני צריך להפוך אותו לטבלה",
+  "userNeed": "יש לי טקסט חופשי עם הרבה פרטים, ואני צריך לסדר אותם בטבלה.",
+  "tool": "gemini",
+  "whatYouGet": "טבלה מסודרת שנבנתה מהטקסט, עם עמודות שתגדירו, שאפשר לייצא ל-Sheets.",
+  "tags": {
+    "tasks": ["work-with-data", "write"],
+    "difficulties": ["starting", "finding-info"],
+    "materials": ["rough-notes", "single-doc", "table"],
+    "outputs": ["change-table"],
+    "roles": ["hq-staff", "operations"],
+    "frequency": ["sometimes"]
+  },
+  "priority": 3,
+  "firstExperiment": {
+    "materialSuggestion": "טקסט ציבורי עם פרטים חוזרים, כמו הודעה שפורסמה באינטרנט, או טקסט מדומה שהכנתם.",
+    "steps": [
+      "הדביקו את הטקסט ב-Gemini וכתבו אילו עמודות אתם צריכים.",
+      "בקשו טבלה ובדקו שכל פרט מהטקסט נכנס לשורה ולעמודה הנכונות.",
+      "אם הטבלה מתאימה, ייצאו אותה ל-Sheets."
+    ],
+    "successCriteria": ["כל הפרטים מהטקסט מופיעים בטבלה.", "אין בטבלה ערכים שלא היו בטקסט."],
+    "timeBoxMinutes": 20
+  },
+  "whatToVerify": ["שהכלי לא השלים ערכים חסרים מעצמו.", "שמספרים ותאריכים הועתקו נכון."],
+  "limitations": [
+    "כשהטקסט עמום, הכלי עלול לשייך פרט לשורה או לעמודה הלא נכונה.",
+    "לפי Google, ייצוא טבלה ל-Sheets זמין בגרסת המחשב ולא בטבלאות שכוללות תמונות."
+  ],
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://support.google.com/gemini/answer/14184041",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "listed",
+    "note": "לפי דף העזרה של Google על אפליקציית Gemini באינטרנט (נבדק ב-17.11.2026), העברית מופיעה ברשימת השפות הנתמכות. איכות התוצר בעברית במשימה הזו לא נבדקה, וכדאי לבדוק אותה בעת ההתנסות.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

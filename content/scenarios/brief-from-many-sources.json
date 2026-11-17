@@ -1,0 +1,53 @@
+{
+  "id": "brief-from-many-sources",
+  "family": "understand",
+  "title": "אני קורא הרבה חומר כדי להכין תדריך",
+  "userNeed": "אני צריך לקרוא כמה מסמכים ארוכים ולהפיק מהם תדריך קצר וממוקד.",
+  "tool": "gemini-notebook",
+  "whatYouGet": "תדריך קצר שמרכז את עיקרי המסמכים, עם הפניות לקטעים שעליהם נשענת כל נקודה.",
+  "tags": {
+    "tasks": ["read-documents", "prepare-meetings"],
+    "difficulties": ["too-much-material"],
+    "materials": ["several-docs"],
+    "outputs": ["summary"],
+    "roles": ["management", "hq-staff"],
+    "frequency": ["often"]
+  },
+  "priority": 5,
+  "firstExperiment": {
+    "materialSuggestion": "שלושה או ארבעה מסמכים ציבוריים בנושא אחד שאתם מכירים, למשל דוחות או נהלים שפורסמו באינטרנט.",
+    "steps": [
+      "צרו מחברת חדשה ב-Gemini Notebook והוסיפו אליה את המסמכים הציבוריים כמקורות.",
+      "בקשו תדריך של עמוד אחד: רקע, נקודות עיקריות ושאלות פתוחות.",
+      "לחצו על ההפניות ובדקו שכל נקודה אכן מופיעה במקור."
+    ],
+    "successCriteria": [
+      "התדריך מכסה את הנקודות שהייתם מציינים בעצמכם.",
+      "מכל נקודה בתדריך אפשר להגיע לקטע המתאים במקור."
+    ],
+    "timeBoxMinutes": 30
+  },
+  "whatToVerify": [
+    "שכל עובדה בתדריך מופיעה במקור, ולא רק נשמעת סבירה.",
+    "שלא הושמטה נקודה חשובה שמופיעה רק באחד המסמכים.",
+    "ההפניות למקורות מאפשרות לבדוק את התשובה, אבל אינן מבטיחות שהמסקנה נכונה."
+  ],
+  "limitations": [
+    "מקורות שמייבאים מ-Drive מועתקים למחברת. לפני שמוסיפים חומר, פעלו לפי הנחיות הארגון בנוגע למידע מוגן.",
+    "התדריך נשען רק על המקורות שהוספתם. הכלי לא יודע מה חסר בהם."
+  ],
+  "demoId": "demo-manager-brief",
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://knowledge.workspace.google.com/admin/generative-ai/notebooklm",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "unknown",
+    "note": "לפי דף Google על Gemini Notebook (נבדק ב-17.11.2026), הכלי תומך ביותר מ-80 שפות, אבל הדף אינו מפרט אותן ולא מצאנו בו אזכור מפורש של עברית. כדאי לבדוק את העבודה בעברית בעת ההתנסות.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

@@ -1,0 +1,48 @@
+{
+  "id": "understand-a-table",
+  "family": "understand",
+  "title": "יש לי טבלה ואני צריך להבין מה בה",
+  "userNeed": "קיבלתי טבלה בגיליון, ואני צריך להבין מה יש בה ומה בולט בנתונים.",
+  "tool": "gemini-in-workspace-apps",
+  "whatYouGet": "הסבר במילים על מבנה הטבלה, על מגמות או חריגים בולטים, ותשובות לשאלות על הנתונים.",
+  "tags": {
+    "tasks": ["work-with-data"],
+    "difficulties": ["finding-info", "starting"],
+    "materials": ["table"],
+    "outputs": ["summary", "qa"],
+    "roles": ["hq-staff", "management"],
+    "frequency": ["sometimes"]
+  },
+  "priority": 3,
+  "firstExperiment": {
+    "materialSuggestion": "טבלת נתונים ציבורית שהורדתם מאתר ממשלתי, או טבלה מדומה שהכנתם.",
+    "steps": [
+      "פתחו את הטבלה ב-Sheets ופתחו את לוח הצד של Gemini.",
+      "בקשו הסבר: מה העמודות, מה הטווחים ומה בולט בנתונים.",
+      "שאלו שאלה אחת שאפשר לבדוק בעצמכם בחישוב פשוט."
+    ],
+    "successCriteria": ["ההסבר תואם את מה שרואים בטבלה.", "התשובה לשאלת הבדיקה נכונה."],
+    "timeBoxMinutes": 20
+  },
+  "whatToVerify": [
+    "כל מספר או סכום שהכלי מציין, בחישוב עצמאי.",
+    "שהכלי לא הסיק קשר של סיבה ותוצאה מנתונים שאינם מאפשרים זאת."
+  ],
+  "limitations": [
+    "הכלי עלול לטעות בחישוב או לפרש לא נכון עמודה שהכותרת שלה לא ברורה.",
+    "לוח הצד של Sheets הוא חלק מ-Gemini ביישומי Workspace. זמינותו תיבדק עם הקצאת הרישיון."
+  ],
+  "capability": {
+    "googleDocumented": true,
+    "sourceUrl": "https://support.google.com/drive/answer/14925782",
+    "checkedOn": "2026-11-17",
+    "includedInOrgPackage": "unknown",
+    "verifiedInOrg": false
+  },
+  "hebrewSupport": {
+    "status": "listed",
+    "note": "לפי רשימת השפות של Google ל-Gemini ב-Workspace (נבדק ב-17.11.2026), העברית מופיעה ברשימה של לוח הצד ב-Sheets. כדאי לבדוק בעת ההתנסות איך הכלי מתמודד עם כותרות ונתונים בעברית.",
+    "checkedOn": "2026-11-17"
+  },
+  "status": "draft"
+}

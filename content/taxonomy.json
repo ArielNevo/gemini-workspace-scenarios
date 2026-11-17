@@ -1,0 +1,52 @@
+{
+  "tasks": [
+    { "id": "read-documents", "label": "קריאת מסמכים ונהלים" },
+    { "id": "write", "label": "כתיבה וניסוח" },
+    { "id": "compare", "label": "השוואת מסמכים" },
+    { "id": "prepare-meetings", "label": "הכנת ישיבות ותדריכים" },
+    { "id": "learn-teach", "label": "למידה והדרכה" },
+    { "id": "work-with-data", "label": "עבודה עם נתונים" }
+  ],
+  "difficulties": [
+    { "id": "too-much-material", "label": "יש יותר מדי חומר" },
+    { "id": "finding-info", "label": "קשה למצוא את המידע הנכון" },
+    { "id": "wording", "label": "קשה לנסח" },
+    { "id": "comparing", "label": "קשה להשוות בין מסמכים" },
+    { "id": "starting", "label": "קשה להתחיל" },
+    { "id": "checking", "label": "קשה לבדוק שלא פספסתי משהו" }
+  ],
+  "materials": [
+    { "id": "single-doc", "label": "מסמך אחד" },
+    { "id": "several-docs", "label": "כמה מסמכים" },
+    { "id": "table", "label": "טבלה או נתונים" },
+    { "id": "rough-notes", "label": "נקודות או רשימות לא מסודרות" },
+    { "id": "none-yet", "label": "עדיין אין לי חומר" }
+  ],
+  "outputs": [
+    { "id": "summary", "label": "סיכום או תקציר" },
+    { "id": "change-table", "label": "טבלת שינויים או השוואה" },
+    { "id": "draft", "label": "טיוטה כתובה" },
+    { "id": "qa", "label": "תשובות לשאלות" },
+    { "id": "checklist", "label": "רשימת בדיקה" },
+    { "id": "learning-pack", "label": "חומר למידה" },
+    { "id": "action-list", "label": "רשימת משימות" }
+  ],
+  "frequency": [
+    { "id": "once", "label": "פעם אחת או לעיתים רחוקות" },
+    { "id": "sometimes", "label": "מדי פעם" },
+    { "id": "often", "label": "לעיתים קרובות" }
+  ],
+  "roles": [
+    { "id": "legal", "label": "משפטי" },
+    { "id": "management", "label": "ניהול" },
+    { "id": "service", "label": "שירות לציבור" },
+    { "id": "hq-staff", "label": "מטה" },
+    { "id": "operations", "label": "תפעול ושטח" }
+  ],
+  "materialClass": [
+    { "id": "public", "label": "חומר פומבי" },
+    { "id": "internal", "label": "חומר פנימי" },
+    { "id": "protected", "label": "חומר מוגן או רגיש" },
+    { "id": "unsure", "label": "לא בטוח" }
+  ]
+}
